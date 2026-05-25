@@ -331,4 +331,188 @@
                 </div>
                 <div class="form-group">
                     <label for="sector">القطاع المستهدف</label>
-                
+                <!-- قسم الفوتر (Footer) -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- القسم الأول: نبذة عن المنظمة -->
+        <div class="footer-brand">
+            <h3 class="footer-logo">GreenTechSoftware</h3>
+            <p class="footer-bio">نقدم حلولاً برمجية ذكية ومستدامة تمكن الأفراد والشركات والقطاعات التعليمية من تحقيق التحول الرقمي بكفاءة وعالية.</p>
+        </div>
+
+        <!-- القسم الثاني: روابط سريعة للوصول للخدمات -->
+        <div class="footer-links">
+            <h4>روابط سريعة</h4>
+            <ul>
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </div>
+
+        <!-- القسم الثالث: وسائل التواصل الاجتماعي -->
+        <div class="footer-social">
+            <h4>تابعنا على</h4>
+            <div class="social-icons">
+                <!-- استبدل # بروابط حساباتكم الحقيقية -->
+                <a href="#" class="icon linkedin" title="LinkedIn">in</a>
+                <a href="#" class="icon twitter" title="X / Twitter">X</a>
+                <a href="#" class="icon github" title="GitHub">git</a>
+                <a href="#" class="icon facebook" title="Facebook">f</a>
+            </div>
+        </div>
+
+        <!-- القسم الرابع: الاتصال المباشر -->
+        <div class="footer-contact">
+            <h4>اتصال مباشر</h4>
+            <p>📧 contact@greentechsoftware.com</p>
+            <p>📱 +966 50 000 0000</p>
+        </div>
+    </div>
+
+    <!-- السطر السفلي لحقوق النشر -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 GreenTechSoftware. جميع الحقوق محفوظة.</p>
+    </div>
+</footer>
+
+<style>
+    /* تنسيقات الفوتر الاحترافي */
+    .site-footer {
+        background-color: #0A3A20; /* أخضر داكن */
+        color: #FFFFFF;
+        padding: 4rem 2rem 1rem 2rem;
+        font-family: 'Cairo', sans-serif;
+        border-top: 4px solid #22C55E; /* خط أخضر مضيء علوي */
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .footer-brand .footer-logo {
+        color: #22C55E;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .footer-brand .footer-bio {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        opacity: 0.85;
+    }
+
+    .site-footer h4 {
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    /* خط صغير تحت العناوين */
+    .site-footer h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 35px;
+        height: 2px;
+        background-color: #22C55E;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 0.7rem;
+    }
+
+    .footer-links ul li a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 0.95rem;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+        color: #22C55E;
+        opacity: 1;
+        padding-right: 5px; /* تأثير حركة خفيف عند التمرير */
+    }
+
+    /* أيقونات التواصل الاجتماعي */
+    .social-icons {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .social-icons .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #14532D; /* أخضر متوسط للداخل */
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons .icon:hover {
+        background-color: #22C55E; /* يضيء بالأخضر الفاتح عند التمرير */
+        transform: translateY(-3px);
+    }
+
+    .footer-contact p {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+        opacity: 0.85;
+    }
+
+    /* الحقوق السفلية */
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 3rem auto 0 auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+
+    /* التوافق مع الشاشات الصغيرة */
+    @media (max-width: 768px) {
+        .site-footer {
+            padding: 3rem 1rem 1rem 1rem;
+        }
+        .footer-container {
+            grid-template-columns: 1fr; /* ترتيب عمودي مريح للهواتف */
+            text-align: center;
+            gap: 2rem;
+        }
+        .site-footer h4::after {
+            right: 50%;
+            transform: translateX(50%); /* تمركز الخط تحت العنوان في الهاتف */
+        }
+        .social-icons {
+            justify-content: center;
+        }
+    }
+        </style>
+                    
