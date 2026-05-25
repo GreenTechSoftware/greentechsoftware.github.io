@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenTechSoftware | Integrated Sustainable Solutions</title>
     
-    <!-- Modern Google Typography Hub -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
@@ -301,6 +300,76 @@
             color: var(--dark-green);
         }
 
+        /* Ecosystem Integration Hub Styles */
+        .ecosystem-container {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(15, 23, 42, 0.04);
+        }
+
+        .ecosystem-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .ecosystem-header h3 {
+            color: var(--dark-green);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ecosystem-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .ecosystem-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3.5rem;
+        }
+
+        .ecosystem-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ecosystem-item img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(20%) contrast(95%);
+            transition: filter 0.3s ease;
+            margin-bottom: 0.75rem;
+        }
+
+        .ecosystem-item span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .ecosystem-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .ecosystem-item:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .ecosystem-item:hover span {
+            color: var(--light-green);
+        }
+
         /* Performance Form Workspace */
         .contact-section {
             background-color: var(--white);
@@ -508,12 +577,17 @@
             .section-grid {
                 grid-template-columns: 1fr;
             }
+            .ecosystem-row {
+                gap: 2rem;
+            }
+            .ecosystem-item img {
+                height: 38px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Unified Glass Header Navigation -->
     <header>
         <div class="header-container">
             <div class="logo">GreenTech<span>Software</span></div>
@@ -527,7 +601,6 @@
         </div>
     </header>
 
-    <!-- Modernist Hero Section Workspace -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <h1>Sustainable & Custom Software Architecture</h1>
@@ -538,12 +611,10 @@
         </div>
     </section>
 
-    <!-- Project Preview Grid Section -->
     <section class="content-section" id="projects">
         <h2 class="section-title">Open Source Ecosystem</h2>
         
         <div class="section-grid">
-            <!-- Project 1: Python Checksum -->
             <div class="display-card">
                 <span class="badge">Python Utility</span>
                 <h3>15-Digit Checksum Generator</h3>
@@ -551,7 +622,6 @@
                 <a href="#" class="project-link">View Source Code ↗</a>
             </div>
 
-            <!-- Project 2: PHP GSM Unlocker -->
             <div class="display-card">
                 <span class="badge">PHP / API Setup</span>
                 <h3>GSM Unlocking Network Services</h3>
@@ -559,7 +629,6 @@
                 <a href="#" class="project-link">Explore Repository ↗</a>
             </div>
 
-            <!-- Project 3: Laravel School System -->
             <div class="display-card">
                 <span class="badge">Laravel MVC Framework</span>
                 <h3>School Management Engine</h3>
@@ -569,12 +638,46 @@
         </div>
     </section>
 
-    <!-- Strategic Grid Showcase Section -->
+    <section class="content-section">
+        <div class="ecosystem-container">
+            <div class="ecosystem-header">
+                <h3>Our Freelance & Payment Integrations</h3>
+                <p>Hire us directly or clear milestones across globally accepted secure payment platforms</p>
+            </div>
+            
+            <div class="ecosystem-row">
+                <a href="https://github.com/GreenTechSoftware" class="ecosystem-item" target="_blank" title="GitHub Open Source Hub">
+                    <img src="github.png" alt="GitHub Profile">
+                    <span>GITHUB</span>
+                </a>
+
+                <a href="#" class="ecosystem-item" target="_blank" title="Hire us on Upwork">
+                    <img src="upwork.png" alt="Upwork Verified">
+                    <span>UPWORK</span>
+                </a>
+
+                <a href="#" class="ecosystem-item" target="_blank" title="eBay Storefront Link">
+                    <img src="ebay.png" alt="eBay Store">
+                    <span>EBAY</span>
+                </a>
+
+                <div class="ecosystem-item" title="B2B Global Bank Wire Support">
+                    <img src="payoneer.png" alt="Payoneer Connected">
+                    <span>PAYONEER</span>
+                </div>
+
+                <div class="ecosystem-item" title="Instant Direct Payments Enabled">
+                    <img src="instapay.png" alt="InstaPay Network">
+                    <span>INSTAPAY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="content-section" id="services">
         <h2 class="section-title">Our Technical Offerings</h2>
         
         <div class="section-grid">
-            <!-- Individual Solutions Portfolio -->
             <div class="display-card">
                 <h3>For Individuals</h3>
                 <ul>
@@ -585,7 +688,6 @@
                 </ul>
             </div>
 
-            <!-- Global Enterprise Portfolio -->
             <div class="display-card">
                 <h3>For Enterprises</h3>
                 <ul>
@@ -596,7 +698,6 @@
                 </ul>
             </div>
 
-            <!-- Institutional Education Services -->
             <div class="display-card">
                 <h3>For Education</h3>
                 <ul>
@@ -609,7 +710,6 @@
         </div>
     </section>
 
-    <!-- Smart Support Solutions Section -->
     <section class="content-section" id="support">
         <h2 class="section-title">Smart Support Solutions</h2>
         
@@ -629,7 +729,6 @@
         </div>
     </section>
 
-    <!-- Lead Capturing Contact Segment -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <h2 class="section-title">Let's Connect</h2>
@@ -662,7 +761,6 @@
         </div>
     </section>
 
-    <!-- Structural High-End Footer Ecosystem -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
