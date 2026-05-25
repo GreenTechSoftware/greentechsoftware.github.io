@@ -101,7 +101,7 @@
             background: radial-gradient(circle at top right, var(--mid-green), var(--dark-green));
             color: var(--white);
             text-align: center;
-            padding: 8rem 1.5rem 6rem 1.5rem;
+            padding: 9rem 1.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -135,80 +135,49 @@
         .hero p {
             font-size: 1.25rem;
             max-width: 650px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 3.5rem auto;
             color: rgba(248, 250, 252, 0.85);
             font-weight: 300;
         }
 
-        /* Trusted Enterprise Section (Ticker Area) */
-        .brands-section {
-            background-color: var(--white);
-            padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-            box-shadow: var(--card-shadow);
-            position: relative;
-            z-index: 5;
-            margin-top: -2rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 16px;
-        }
-
-        .brands-label {
-            text-align: center;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .brands-grid {
-            display: flex;
-            justify-content: space-around;
+        /* Upgraded Interactive Launch Project CTA */
+        .cta-btn {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            padding: 1.15rem 3.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            max-width: 900px;
-            margin: 0 auto 1rem auto;
+            gap: 0.75rem;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .brand-item svg {
-            height: 32px;
-            width: auto;
-            fill: #94A3B8; /* Monochromatic base */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .cta-btn span.arrow {
+            transition: transform 0.3s ease;
         }
 
-        /* Accurate Official Multi-colored or Identity Fill Rules */
-        .brand-item.amazon:hover svg { fill: #FF9900; }
-        .brand-item.microsoft:hover svg { fill: #737373; }
-        .brand-item.cisco:hover svg { fill: #1BA0D7; }
-        .brand-item.google:hover svg { fill: #4285F4; }
-        .brand-item.apple:hover svg { fill: #000000; }
-
-        .brand-item:hover svg {
-            transform: scale(1.05);
+        .cta-btn:hover {
+            background-color: var(--neon-accent);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 35px rgba(74, 222, 128, 0.45);
+            padding-left: 3.75rem;
+            padding-right: 3.75rem;
         }
 
-        /* Trademark Disclosure Note Styling */
-        .trademark-note {
-            text-align: center;
-            font-size: 0.7rem;
-            color: #94A3B8;
-            line-height: 1.4;
-            max-width: 800px;
-            margin: 1.5rem auto 0 auto;
-            border-top: 1px dashed #E2E8F0;
-            padding-top: 1rem;
+        .cta-btn:hover span.arrow {
+            transform: translateX(6px);
         }
 
-        /* Strategic Grid Showcase Section */
-        .services-section {
+        /* Common Section Typography Systems */
+        .content-section {
             max-width: 1200px;
-            margin: 6rem auto;
+            margin: 7rem auto;
             padding: 0 1.5rem;
         }
 
@@ -230,13 +199,15 @@
             border-radius: 10px;
         }
 
-        .services-grid {
+        /* Responsive Grid Frameworks */
+        .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2.5rem;
         }
 
-        .service-card {
+        /* Base Card Styling Framework */
+        .display-card {
             background: var(--white);
             padding: 3rem 2.5rem;
             border-radius: 20px;
@@ -244,9 +215,11 @@
             border: 1px solid rgba(15, 23, 42, 0.03);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .service-card::before {
+        .display-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -258,40 +231,74 @@
             transition: background-color 0.3s;
         }
 
-        .service-card:hover {
+        .display-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--hover-shadow);
         }
 
-        .service-card:hover::before {
+        .display-card:hover::before {
             background-color: var(--light-green);
         }
 
-        .service-card h3 {
+        .display-card h3 {
             color: var(--dark-green);
             margin-bottom: 1.5rem;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
         }
 
-        .service-card ul {
-            list-style-type: none;
-        }
-
-        .service-card li {
+        /* Services Specific Rules */
+        .display-card ul { list-style-type: none; }
+        .display-card li {
             margin-bottom: 1rem;
             position: relative;
             padding-left: 1.75rem;
             color: var(--text-muted);
             font-size: 0.98rem;
         }
-
-        .service-card li::before {
+        .display-card li::before {
             content: "✓";
             color: var(--light-green);
             position: absolute;
             left: 0;
             font-weight: bold;
+        }
+
+        /* Modern Project Preview Cards Specific Architecture */
+        .badge {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: var(--mid-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--dark-green);
         }
 
         /* Performance Form Workspace */
@@ -498,14 +505,8 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
-            .services-grid {
+            .section-grid {
                 grid-template-columns: 1fr;
-            }
-            .brands-grid {
-                gap: 1.5rem;
-            }
-            .brand-item svg {
-                height: 24px;
             }
         }
     </style>
@@ -519,6 +520,8 @@
             <nav>
                 <a href="#hero">Home</a>
                 <a href="#services">Services</a>
+                <a href="#projects">Free Projects</a>
+                <a href="#support">Support</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -529,69 +532,50 @@
         <div class="hero-content">
             <h1>Sustainable & Custom Software Architecture</h1>
             <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize educational institutions.</p>
-            <a href="#contact" class="cta-btn">Launch Your Project</a>
+            <a href="#contact" class="cta-btn">
+                Launch Your Project <span class="arrow">→</span>
+            </a>
         </div>
     </section>
 
-    <!-- Corrected Official Corporate Brand Marks -->
-    <section class="brands-section">
-        <div class="brands-label">Supported Cloud Platforms & Enterprise Environments</div>
-        <div class="brands-grid">
-            
-            <!-- Exact Amazon Wordmark with Arrow -->
-            <div class="brand-item amazon" title="Amazon Web Services">
-                <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M29.8 14c0 3.3-1.8 5-4.5 5-1.5 0-2.8-.7-3.4-1.8V22H18V4.1h3.7v6.6c.7-1 1.9-1.6 3.4-1.6 2.8 0 4.7 1.7 4.7 4.9zm-3.8.1c0-1.8-.8-2.6-2.1-2.6s-2.1.8-2.1 2.6c0 1.7.8 2.5 2.1 2.5s2.1-.8 2.1-2.5zm11.7.9c0 2.5-1.5 4-4.2 4-1.4 0-2.6-.5-3.3-1.3l1.8-1.9c.5.5 1 .7 1.5.7.9 0 1.4-.4 1.4-1.1v-.5c-.6.6-1.5 1-2.5 1-2.5 0-4.1-1.6-4.1-3.9 0-2.4 1.7-4 4.1-4 1 0 1.9.4 2.5 1V9.2h2.8v5.8zm-3.1-1c0-1.2-.6-1.8-1.5-1.8-.8 0-1.5.6-1.5 1.8 0 1.1.7 1.7 1.5 1.7.9-.1 1.5-.7 1.5-1.7zM11.6 9.2h3.5l-4.5 12.5H7.2L3.5 9.2h3.6l2.3 8.9 2.2-8.9zm30.3.1c1.3 1.4 1.7 3.2 1.5 5.1H35.2c.1 1.3.8 2 2.1 2.1.8 0 1.5-.3 2.1-.8l1.6 1.8c-1 .9-2.4 1.4-4 1.4-3.5 0-5.4-2.1-5.4-4.9 0-3 2-4.9 5-4.9 1.9-.1 3.1.9 3.4 2.2zm-3.4 3.1c0-1-.5-1.6-1.4-1.6-.9 0-1.4.6-1.5 1.6h2.9z"/>
-                    <path d="M4 23.5c6.5 4.3 16.5 5.7 24.3 5.7 11 0 20.2-2.8 24.5-7.3.3-.3.1-.7-.3-.5-6.5 3.3-15 4.7-23.7 4.7-8.3 0-17.7-1.4-25.1-5.5-.4-.2-.6.2-.1.6z"/>
-                </svg>
+    <!-- Project Preview Grid Section -->
+    <section class="content-section" id="projects">
+        <h2 class="section-title">Open Source Ecosystem</h2>
+        
+        <div class="section-grid">
+            <!-- Project 1: Python Checksum -->
+            <div class="display-card">
+                <span class="badge">Python Utility</span>
+                <h3>15-Digit Checksum Generator</h3>
+                <p class="project-desc">High-performance implementation of custom math validation algorithms. Perfect for checking system configurations, tracking numbers, or processing data strings reliably.</p>
+                <a href="#" class="project-link">View Source Code ↗</a>
             </div>
 
-            <!-- Authentic Microsoft Quad-Grid -->
-            <div class="brand-item microsoft" title="Microsoft Azure Network">
-                <svg viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 0h11v11H0zM12 0h11v11H12zM0 12h11v11H0zM12 12h11v11H12z"/>
-                </svg>
+            <!-- Project 2: PHP GSM Unlocker -->
+            <div class="display-card">
+                <span class="badge">PHP / API Setup</span>
+                <h3>GSM Unlocking Network Services</h3>
+                <p class="project-desc">A structured PHP web application template designed to link up with remote GSM servers, handle phone unlock queries, and update device network profiles smoothly.</p>
+                <a href="#" class="project-link">Explore Repository ↗</a>
             </div>
 
-            <!-- True Cisco Bridge Node Signifier -->
-            <div class="brand-item cisco" title="Cisco Systems Ecosystem">
-                <svg viewBox="0 0 32 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 12.3h1.8v5.5H1zm3.1-2.5h1.8v8H4.1zm3.1-2.5h1.8V17.8H7.2zm3.1 1.3h1.8V17.8h-1.8zm3.2-2.6H15.3v14h-1.8zm3.1 2.6H20.2V9.8h-1.8zm3.1-2.6H23.3V17.8h-1.8zm3.1 2.6H26.4V15h-1.8zm3.1 2.5H31v3.2h-1.8z"/>
-                </svg>
+            <!-- Project 3: Laravel School System -->
+            <div class="display-card">
+                <span class="badge">Laravel MVC Framework</span>
+                <h3>School Management Engine</h3>
+                <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
+                <a href="#" class="project-link">Clone Repository ↗</a>
             </div>
-
-            <!-- Perfect Geometric Google 'G' -->
-            <div class="brand-item google" title="Google Cloud Capabilities">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.655-5.17 3.655-8.58z" fill="#4285F4"/>
-                    <path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H.62v3.15C2.6 21.35 6.99 24 12 24z" fill="#34A853"/>
-                    <path d="M5.32 14.24c-.24-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.51H.62C.22 7.61 0 8.78 0 12s.22 4.39.62 5.49l4.7-3.25z" fill="#FBBC05"/>
-                    <path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 6.99 0 2.6 2.65.62 6.51l4.7 3.25c.94-2.85 3.57-4.96 6.68-4.96z" fill="#EA4335"/>
-                </svg>
-            </div>
-
-            <!-- Unbroken Apple Profile Silhouette with Leaf -->
-            <div class="brand-item apple" title="Apple Ecosystem Interoperability">
-                <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.13-1.78-14.36-5.75-3.72-2.87-7.72-7.65-12.01-14.34-4.88-7.61-8.94-16.14-12.19-25.59-3.25-9.46-4.89-18.42-4.89-26.9 0-14.83 4.12-26.64 12.37-35.41 8.24-8.79 18.29-13.19 30.14-13.19 4.63 0 9.71 1.2 15.25 3.6 5.54 2.41 9.04 3.6 10.5 3.6 1.15 0 4.8-1.25 10.93-3.74 6.13-2.5 11.22-3.65 15.25-3.46 14.15.64 25.13 5.92 32.95 15.85-11.12 6.75-16.56 16.08-16.3 28.02.26 9.4 3.79 17.3 10.61 23.68 6.82 6.39 14.71 9.87 23.69 10.45-2.05 6.03-4.62 11.66-7.72 16.92zM119.22 30.1c0-7.72 2.76-14.88 8.27-21.49 5.51-6.61 12.44-10.74 20.78-12.38.2 1.34.3 2.56.3 3.66 0 7.54-2.87 14.8-8.62 21.79-5.75 6.99-12.83 11.38-21.24 13.17-.32-1.53-.49-3.1-.49-4.75z"/>
-                </svg>
-            </div>
-
-        </div>
-
-        <!-- Trademark Attributions Statement -->
-        <div class="trademark-note">
-            <strong>Legal Notice & Trademark Attributions:</strong> Amazon Web Services, Microsoft Azure, Cisco Systems, Google Cloud, and Apple are registered trademarks of their respective owners. GreenTechSoftware is an independent software architectural solution provider. No official endorsement, sponsorship, or direct affiliate relationship is implied by the visualization of these corporate technical environment identifiers.
         </div>
     </section>
 
     <!-- Strategic Grid Showcase Section -->
-    <section class="services-section" id="services">
+    <section class="content-section" id="services">
         <h2 class="section-title">Our Technical Offerings</h2>
         
-        <div class="services-grid">
+        <div class="section-grid">
             <!-- Individual Solutions Portfolio -->
-            <div class="service-card">
+            <div class="display-card">
                 <h3>For Individuals</h3>
                 <ul>
                     <li>Personal portfolio designs & brand setups.</li>
@@ -602,7 +586,7 @@
             </div>
 
             <!-- Global Enterprise Portfolio -->
-            <div class="service-card">
+            <div class="display-card">
                 <h3>For Enterprises</h3>
                 <ul>
                     <li>Bespoke operational workflows (ERP & CRM).</li>
@@ -613,7 +597,7 @@
             </div>
 
             <!-- Institutional Education Services -->
-            <div class="service-card">
+            <div class="display-card">
                 <h3>For Education</h3>
                 <ul>
                     <li>Custom modern Learning Management Systems (LMS).</li>
@@ -621,6 +605,26 @@
                     <li>Virtual classrooms & integrated automated exams.</li>
                     <li>Interactive utility structures for classes and groups.</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Support Solutions Section -->
+    <section class="content-section" id="support">
+        <h2 class="section-title">Smart Support Solutions</h2>
+        
+        <div class="section-grid">
+            <div class="display-card">
+                <h3>Managed Cloud Architectures</h3>
+                <p class="project-desc">Continuous server checks, auto-scaling configuration setups, and data recovery loops designed to keep your target platforms completely online.</p>
+            </div>
+            <div class="display-card">
+                <h3>API Maintenance & Refactoring</h3>
+                <p class="project-desc">Proactive identification of bottleneck risks, security patch additions, and performance updates for critical external system linkages.</p>
+            </div>
+            <div class="display-card">
+                <h3>Direct Developer Support</h3>
+                <p class="project-desc">Immediate code-level reviews and direct architecture calls tailored to solve complex issues for engineering teams in real time.</p>
             </div>
         </div>
     </section>
@@ -671,7 +675,8 @@
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#services">Our Services</a></li>
-                    <li><a href="#contact">Work With Us</a></li>
+                    <li><a href="#projects">Free Projects</a></li>
+                    <li><a href="#support">Support System</a></li>
                 </ul>
             </div>
 
