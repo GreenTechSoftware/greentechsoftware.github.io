@@ -1,47 +1,62 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenTechSoftware | للحلول البرمجية المتكاملة</title>
-    <!-- خطوط جوجل لتحسين المظهر -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>GreenTechSoftware | Integrated Sustainable Solutions</title>
+    
+    <!-- Modern Google Typography Hub -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* المتغيرات وتنسيق الألوان الأساسية */
+        /* Design Variables & Modern Architecture System */
         :root {
-            --dark-green: #0A3A20;
-            --mid-green: #14532D;
+            --dark-green: #042414;
+            --mid-green: #0A3A20;
             --light-green: #22C55E;
-            --bg-light: #F4FBF7;
-            --text-dark: #1F2937;
+            --neon-accent: #4ADE80;
+            --bg-light: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
             --white: #FFFFFF;
+            --card-shadow: 0 10px 30px -10px rgba(4, 36, 20, 0.06);
+            --hover-shadow: 0 20px 40px -15px rgba(4, 36, 20, 0.12);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
         }
 
-        /* الـ Header */
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Glassmorphic Fixed Navigation Bar */
         header {
-            background-color: var(--dark-green);
+            background-color: rgba(4, 36, 20, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 1.25rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.15);
         }
 
         .header-container {
@@ -53,464 +68,534 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
             color: var(--light-green);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         nav a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            margin-right: 1.5rem;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         nav a:hover {
-            color: var(--light-green);
+            color: var(--neon-accent);
         }
 
-        /* القسم الترحيبي (Hero Section) */
+        /* Cyber-Premium Hero Workspace */
         .hero {
-            background: linear-gradient(135deg, var(--dark-green), var(--mid-green));
+            background: radial-gradient(circle at top right, var(--mid-green), var(--dark-green));
             color: var(--white);
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 8rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, var(--bg-light));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #FFFFFF, #BCF5BC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #E2E8F0;
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            color: rgba(248, 250, 252, 0.85);
+            font-weight: 300;
         }
 
         .cta-btn {
             background-color: var(--light-green);
             color: var(--dark-green);
-            padding: 0.75rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.2s;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .cta-btn:hover {
-            transform: scale(1.05);
+            background-color: var(--neon-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(74, 222, 128, 0.4);
         }
 
-        /* أقسام الخدمات */
+        /* Strategic Grid Showcase Section */
         .services-section {
             max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 1rem;
+            margin: 6rem auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
             text-align: center;
             color: var(--dark-green);
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            position: relative;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            font-weight: 800;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 4px;
+            width: 50px;
+            height: 5px;
             background-color: var(--light-green);
-            margin: 0.5rem auto 0 auto;
-            border-radius: 2px;
+            margin: 0.75rem auto 0 auto;
+            border-radius: 10px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--mid-green);
-            transition: translateY 0.3s;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(15, 23, 42, 0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--mid-green);
+            border-radius: 20px 20px 0 0;
+            transition: background-color 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .service-card:hover::before {
+            background-color: var(--light-green);
         }
 
         .service-card h3 {
             color: var(--dark-green);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
         }
 
         .service-card ul {
             list-style-type: none;
-            padding-right: 0;
         }
 
         .service-card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             position: relative;
-            padding-right: 1.5rem;
+            padding-left: 1.75rem;
+            color: var(--text-muted);
+            font-size: 0.98rem;
         }
 
         .service-card li::before {
             content: "✓";
             color: var(--light-green);
             position: absolute;
-            right: 0;
+            left: 0;
             font-weight: bold;
         }
 
-        /* قسم التواصل */
+        /* Performance Form Workspace */
         .contact-section {
             background-color: var(--white);
-            padding: 4rem 1rem;
+            padding: 6rem 1.5rem;
+            border-top: 1px solid rgba(15, 23, 42, 0.05);
         }
 
         .contact-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
+        .form-card {
+            background: var(--bg-light);
+            padding: 3.5rem 3rem;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(15, 23, 42, 0.02);
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--dark-green);
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #D1D5DB;
-            border-radius: 5px;
+            padding: 1rem 1.25rem;
+            border: 1px solid #E2E8F0;
+            background-color: var(--white);
+            border-radius: 12px;
             font-size: 1rem;
+            font-family: inherit;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--mid-green);
-            box-shadow: 0 0 0 3px rgba(20, 83, 45, 0.2);
+            border-color: var(--light-green);
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
         }
 
         .submit-btn {
             background-color: var(--dark-green);
             color: var(--white);
             width: 100%;
-            padding: 0.75rem;
+            padding: 1.1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
             font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
             cursor: pointer;
-            transition: background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(4, 36, 20, 0.15);
+            transition: all 0.3s ease;
         }
 
         .submit-btn:hover {
             background-color: var(--mid-green);
+            transform: translateY(-1px);
         }
 
-        /* الـ Footer */
-        footer {
+        /* Modular Footer Framework */
+        .site-footer {
             background-color: var(--dark-green);
             color: var(--white);
+            padding: 5rem 2rem 2rem 2rem;
+            border-top: 5px solid var(--light-green);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .footer-brand .footer-logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-brand .footer-logo span {
+            color: var(--light-green);
+        }
+
+        .footer-brand .footer-bio {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 320px;
+        }
+
+        .site-footer h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links功能 ul {
+            list-style: none;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--neon-accent);
+            padding-left: 4px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-icons .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icons .icon:hover {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            transform: translateY(-3px);
+            border-color: var(--light-green);
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: auto;
-            border-top: 3px solid var(--light-green);
         }
 
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        /* التوافق مع الهواتف */
+        /* Micro-Screen Media Adaptations */
+        @media (max-width: 968px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.25rem;
             }
-            nav a {
-                margin: 0 0.75rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .form-card {
+                padding: 2.5rem 1.5rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر (Header) -->
+    <!-- Unified Glass Header Navigation -->
     <header>
         <div class="header-container">
-            <div class="logo">GreenTechSoftware</div>
+            <div class="logo">GreenTech<span>Software</span></div>
             <nav>
-                <a href="#hero">الرئيسية</a>
-                <a href="#services">خدماتنا</a>
-                <a href="#contact">تواصل معنا</a>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero) -->
+    <!-- Modernist Hero Section Workspace -->
     <section class="hero" id="hero">
-        <h1>ابتكار برمجي مستدام ومخصص</h1>
-        <p>نحن في GreenTechSoftware نقدم أفضل الحلول البرمجية التي تلبي تطلعات الأفراد وتدعم نمو الشركات وتطور المؤسسات التعليمية.</p>
-        <a href="#contact" class="cta-btn">ابدأ مشروعك معنا</a>
+        <div class="hero-content">
+            <h1>Sustainable & Custom Software Architecture</h1>
+            <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize modern educational institutions.</p>
+            <a href="#contact" class="cta-btn">Launch Your Project</a>
+        </div>
     </section>
 
-    <!-- قسم الخدمات (Services) -->
+    <!-- Structured Corporate Services Workspace -->
     <section class="services-section" id="services">
-        <h2 class="section-title">خدماتنا البرمجية</h2>
+        <h2 class="section-title">Our Technical Offerings</h2>
         
         <div class="services-grid">
-            <!-- خدمات الأفراد -->
+            <!-- Individual Solutions Portfolio -->
             <div class="service-card">
-                <h3>خدمات الأفراد</h3>
+                <h3>For Individuals</h3>
                 <ul>
-                    <li>تطوير مواقع ومحافظ تعريفية شخصية (Portfolio).</li>
-                    <li>تطوير وتصميم السير الذاتية التفاعلية.</li>
-                    <li>دعم وتطوير مشاريع التخرج التقنية.</li>
-                    <li>استشارات برمجية وتوجيه تقني للمطورين المستقلين.</li>
+                    <li>Personal portfolio designs & brand setups.</li>
+                    <li>Interactive digital resumes and profiles.</li>
+                    <li>Academic engineering & graduation tech consultancy.</li>
+                    <li>Direct architecture advising for solo developers.</li>
                 </ul>
             </div>
 
-            <!-- خدمات الشركات -->
+            <!-- Global Enterprise Portfolio -->
             <div class="service-card">
-                <h3>خدمات الشركات</h3>
+                <h3>For Enterprises</h3>
                 <ul>
-                    <li>بناء الأنظمة الإدارية المخصصة (ERP & CRM).</li>
-                    <li>تصميم وتطوير المواقع والمتاجر الإلكترونية المتكاملة.</li>
-                    <li>تطوير تطبيقات الهواتف الذكية (iOS & Android).</li>
-                    <li>حلول الحوسبة السحابية وتحسين البنية التحتية البرمجية.</li>
+                    <li>Bespoke operational workflows (ERP & CRM).</li>
+                    <li>Integrated e-commerce storefront deployments.</li>
+                    <li>Cross-platform mobile apps (iOS & Android).</li>
+                    <li>Advanced cloud design & network updates.</li>
                 </ul>
             </div>
 
-            <!-- القطاعات التعليمية -->
+            <!-- Institutional Education Services -->
             <div class="service-card">
-                <h3>القطاعات التعليمية</h3>
+                <h3>For Education</h3>
                 <ul>
-                    <li>تطوير منصات وأنظمة إدارة التعلم الإلكتروني (LMS).</li>
-                    <li>بناء تطبيقات إدارة المدارس والجامعات وحساب الدرجات.</li>
-                    <li>تصميم فصول دراسية افتراضية وأنظمة اختبارات ذكية.</li>
-                    <li>حلول وتطبيقات تفاعلية مخصصة للطلاب والمعلمين.</li>
+                    <li>Custom modern Learning Management Systems (LMS).</li>
+                    <li>Unified school portals & core grading platforms.</li>
+                    <li>Virtual classrooms & integrated automated exams.</li>
+                    <li>Interactive utility structures for classes and groups.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- قسم التواصل (Contact Form) -->
+    <!-- Lead Capturing Contact Segment -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <h2 class="section-title">تواصل معنا</h2>
-            <!-- باستخدام خدمة formspree المجانية لاستقبال الرسائل، أو يمكنك ربطه بقاعدة بياناتك لاحقاً -->
-            <form action="https://formspree.io" method="POST">
-                <div class="form-group">
-                    <label for="name">الاسم / اسم المنشأة</label>
-                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
-                </div>
-                <div class="form-group">
-                    <label for="email">البريد الإلكتروني</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="sector">القطاع المستهدف</label>
-                <!-- قسم الفوتر (Footer) -->
-<footer class="site-footer">
-    <div class="footer-container">
-        <!-- القسم الأول: نبذة عن المنظمة -->
-        <div class="footer-brand">
-            <h3 class="footer-logo">GreenTechSoftware</h3>
-            <p class="footer-bio">نقدم حلولاً برمجية ذكية ومستدامة تمكن الأفراد والشركات والقطاعات التعليمية من تحقيق التحول الرقمي بكفاءة وعالية.</p>
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="form-card">
+                <form action="https://formspree.io/f/your_form_id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name / Enterprise Entity</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="sector">Target Sector</label>
+                        <select id="sector" name="sector" required>
+                            <option value="" disabled selected>Select your service alignment</option>
+                            <option value="individual">Individual Solutions</option>
+                            <option value="enterprise">Enterprise Solutions</option>
+                            <option value="education">Educational Tech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Description</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your digital goals..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <!-- القسم الثاني: روابط سريعة للوصول للخدمات -->
-        <div class="footer-links">
-            <h4>روابط سريعة</h4>
-            <ul>
-                <li><a href="#hero">الرئيسية</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </div>
+    <!-- Structural High-End Footer Ecosystem -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo">GreenTech<span>Software</span></h3>
+                <p class="footer-bio">Building clean, sustainable, and high-performance digital systems that drive growth across worldwide industries.</p>
+            </div>
 
-        <!-- القسم الثالث: وسائل التواصل الاجتماعي -->
-        <div class="footer-social">
-            <h4>تابعنا على</h4>
-            <div class="social-icons">
-                <!-- استبدل # بروابط حساباتكم الحقيقية -->
-                <a href="#" class="icon linkedin" title="LinkedIn">in</a>
-                <a href="https://github.com/GreenTechSoftware" class="icon github" title="GitHub">git</a>
-                <a href="https://www.facebook.com/share/1bV4XWm3r2/" class="icon facebook" title="Facebook">f</a>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#contact">Work With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Social Hubs</h4>
+                <div class="social-icons">
+                    <a href="#" class="icon" title="LinkedIn">In</a>
+                    <a href="https://github.com/GreenTechSoftware" class="icon" title="GitHub">Git</a>
+                    <a href="https://www.facebook.com/share/1bV4XWm3r2/" class="icon" title="Facebook">Fb</a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Smart Support</h4>
+                <p>📧 contact@greentechsoftware.com</p>
             </div>
         </div>
 
-        <!-- القسم الرابع: الاتصال المباشر -->
-        <div class="footer-contact">
-            <h> Smart</h> Support</h4>
-            <p>📧 contact@greentechsoftware.com</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GreenTechSoftware. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
 
-    <!-- السطر السفلي لحقوق النشر -->
-    <div class="footer-bottom">
-        <p>&copy; 2026 GreenTechSoftware. جميع الحقوق محفوظة.</p>
-    </div>
-</footer>
-
-<style>
-    /* تنسيقات الفوتر الاحترافي */
-    .site-footer {
-        background-color: #0A3A20; /* أخضر داكن */
-        color: #FFFFFF;
-        padding: 4rem 2rem 1rem 2rem;
-        font-family: 'Cairo', sans-serif;
-        border-top: 4px solid #22C55E; /* خط أخضر مضيء علوي */
-    }
-
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2.5rem;
-    }
-
-    .footer-brand .footer-logo {
-        color: #22C55E;
-        font-size: 1.6rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .footer-brand .footer-bio {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        opacity: 0.85;
-    }
-
-    .site-footer h4 {
-        color: #FFFFFF;
-        font-size: 1.2rem;
-        margin-bottom: 1.2rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-    }
-
-    /* خط صغير تحت العناوين */
-    .site-footer h4::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 35px;
-        height: 2px;
-        background-color: #22C55E;
-    }
-
-    .footer-links ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links ul li {
-        margin-bottom: 0.7rem;
-    }
-
-    .footer-links ul li a {
-        color: #FFFFFF;
-        text-decoration: none;
-        font-size: 0.95rem;
-        opacity: 0.8;
-        transition: all 0.3s ease;
-    }
-
-    .footer-links ul li a:hover {
-        color: #22C55E;
-        opacity: 1;
-        padding-right: 5px; /* تأثير حركة خفيف عند التمرير */
-    }
-
-    /* أيقونات التواصل الاجتماعي */
-    .social-icons {
-        display: flex;
-        gap: 0.8rem;
-        margin-top: 1rem;
-    }
-
-    .social-icons .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #14532D; /* أخضر متوسط للداخل */
-        color: #FFFFFF;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-
-    .social-icons .icon:hover {
-        background-color: #22C55E; /* يضيء بالأخضر الفاتح عند التمرير */
-        transform: translateY(-3px);
-    }
-
-    .footer-contact p {
-        font-size: 0.95rem;
-        margin-bottom: 0.8rem;
-        opacity: 0.85;
-    }
-
-    /* الحقوق السفلية */
-    .footer-bottom {
-        max-width: 1200px;
-        margin: 3rem auto 0 auto;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
-    }
-
-    .footer-bottom p {
-        font-size: 0.85rem;
-        opacity: 0.7;
-    }
-
-    /* التوافق مع الشاشات الصغيرة */
-    @media (max-width: 768px) {
-        .site-footer {
-            padding: 3rem 1rem 1rem 1rem;
-        }
-        .footer-container {
-            grid-template-columns: 1fr; /* ترتيب عمودي مريح للهواتف */
-            text-align: center;
-            gap: 2rem;
-        }
-        .site-footer h4::after {
-            right: 50%;
-            transform: translateX(50%); /* تمركز الخط تحت العنوان في الهاتف */
-        }
-        .social-icons {
-            justify-content: center;
-        }
-    }
-        </style>
-                    
+</body>
+</html>
