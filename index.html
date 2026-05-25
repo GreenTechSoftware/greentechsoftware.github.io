@@ -1,11 +1,334 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>GreenTechSoftware | EGYPT 🇪🇬 @2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTechSoftware | للحلول البرمجية المتكاملة</title>
+    <!-- خطوط جوجل لتحسين المظهر -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* المتغيرات وتنسيق الألوان الأساسية */
+        :root {
+            --dark-green: #0A3A20;
+            --mid-green: #14532D;
+            --light-green: #22C55E;
+            --bg-light: #F4FBF7;
+            --text-dark: #1F2937;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الـ Header */
+        header {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--light-green);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--light-green);
+        }
+
+        /* القسم الترحيبي (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-green), var(--mid-green));
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #E2E8F0;
+        }
+
+        .cta-btn {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* أقسام الخدمات */
+        .services-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark-green);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--light-green);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--mid-green);
+            transition: translateY 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            color: var(--light-green);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
+        /* قسم التواصل */
+        .contact-section {
+            background-color: var(--white);
+            padding: 4rem 1rem;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-green);
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mid-green);
+            box-shadow: 0 0 0 3px rgba(20, 83, 45, 0.2);
+        }
+
+        .submit-btn {
+            background-color: var(--dark-green);
+            color: var(--white);
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--mid-green);
+        }
+
+        /* الـ Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: auto;
+            border-top: 3px solid var(--light-green);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* التوافق مع الهواتف */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>مرحباً بكم في GreenTechSoftware</h1>
-    <p>منصة برمجية متخصصة في الحلول التقنية المستدامة.</p>
-</body>
-</html>
+
+    <!-- الهيدر (Header) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenTechSoftware</div>
+            <nav>
+                <a href="#hero">الرئيسية</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (Hero) -->
+    <section class="hero" id="hero">
+        <h1>ابتكار برمجي مستدام ومخصص</h1>
+        <p>نحن في GreenTechSoftware نقدم أفضل الحلول البرمجية التي تلبي تطلعات الأفراد وتدعم نمو الشركات وتطور المؤسسات التعليمية.</p>
+        <a href="#contact" class="cta-btn">ابدأ مشروعك معنا</a>
+    </section>
+
+    <!-- قسم الخدمات (Services) -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">خدماتنا البرمجية</h2>
+        
+        <div class="services-grid">
+            <!-- خدمات الأفراد -->
+            <div class="service-card">
+                <h3>خدمات الأفراد</h3>
+                <ul>
+                    <li>تطوير مواقع ومحافظ تعريفية شخصية (Portfolio).</li>
+                    <li>تطوير وتصميم السير الذاتية التفاعلية.</li>
+                    <li>دعم وتطوير مشاريع التخرج التقنية.</li>
+                    <li>استشارات برمجية وتوجيه تقني للمطورين المستقلين.</li>
+                </ul>
+            </div>
+
+            <!-- خدمات الشركات -->
+            <div class="service-card">
+                <h3>خدمات الشركات</h3>
+                <ul>
+                    <li>بناء الأنظمة الإدارية المخصصة (ERP & CRM).</li>
+                    <li>تصميم وتطوير المواقع والمتاجر الإلكترونية المتكاملة.</li>
+                    <li>تطوير تطبيقات الهواتف الذكية (iOS & Android).</li>
+                    <li>حلول الحوسبة السحابية وتحسين البنية التحتية البرمجية.</li>
+                </ul>
+            </div>
+
+            <!-- القطاعات التعليمية -->
+            <div class="service-card">
+                <h3>القطاعات التعليمية</h3>
+                <ul>
+                    <li>تطوير منصات وأنظمة إدارة التعلم الإلكتروني (LMS).</li>
+                    <li>بناء تطبيقات إدارة المدارس والجامعات وحساب الدرجات.</li>
+                    <li>تصميم فصول دراسية افتراضية وأنظمة اختبارات ذكية.</li>
+                    <li>حلول وتطبيقات تفاعلية مخصصة للطلاب والمعلمين.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل (Contact Form) -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <!-- باستخدام خدمة formspree المجانية لاستقبال الرسائل، أو يمكنك ربطه بقاعدة بياناتك لاحقاً -->
+            <form action="https://formspree.io" method="POST">
+                <div class="form-group">
+                    <label for="name">الاسم / اسم المنشأة</label>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="sector">القطاع المستهدف</label>
+                
