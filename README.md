@@ -1,4 +1,4 @@
-# 🌐 GreenTechSoftware Landing Page
+# 🌐 GreenTechSoftware
 
 The official, production-ready responsive landing page for **GreenTechSoftware**—a premier tech enterprise delivering integrated, sustainable, and highly optimized software solutions. Engineered strictly using vanilla web technologies for maximum delivery speed and accessibility.
 
