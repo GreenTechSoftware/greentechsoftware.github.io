@@ -80,19 +80,35 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         nav a:hover {
             color: var(--neon-accent);
+        }
+
+        /* Highlight buttons for Head Nav */
+        nav a.nav-btn {
+            background-color: rgba(34, 197, 94, 0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: var(--neon-accent);
+        }
+
+        nav a.nav-btn:hover {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            border-color: var(--light-green);
         }
 
         /* Cyber-Premium Hero Workspace */
@@ -300,76 +316,6 @@
             color: var(--dark-green);
         }
 
-        /* Ecosystem Integration Hub Styles */
-        .ecosystem-container {
-            background-color: var(--white);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(15, 23, 42, 0.04);
-        }
-
-        .ecosystem-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .ecosystem-header h3 {
-            color: var(--dark-green);
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .ecosystem-header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .ecosystem-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 3.5rem;
-        }
-
-        .ecosystem-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .ecosystem-item img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(20%) contrast(95%);
-            transition: filter 0.3s ease;
-            margin-bottom: 0.75rem;
-        }
-
-        .ecosystem-item span {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            letter-spacing: 0.3px;
-            transition: color 0.3s ease;
-        }
-
-        .ecosystem-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .ecosystem-item:hover img {
-            filter: grayscale(0%) contrast(100%);
-        }
-
-        .ecosystem-item:hover span {
-            color: var(--light-green);
-        }
-
         /* Performance Form Workspace */
         .contact-section {
             background-color: var(--white);
@@ -454,8 +400,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 4rem;
+            grid-template-columns: 1.5fr repeat(2, 1fr) 2fr;
+            gap: 3rem;
         }
 
         .footer-brand .footer-logo {
@@ -473,7 +419,6 @@
             font-size: 0.95rem;
             line-height: 1.7;
             color: rgba(255, 255, 255, 0.7);
-            max-width: 320px;
         }
 
         .site-footer h4 {
@@ -505,37 +450,55 @@
             padding-left: 4px;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-icons .icon {
-            display: flex;
+        /* Shifted Image Integration Workspace inside Footer */
+        .footer-ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
             align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--white);
+        }
+
+        .footer-ecosystem-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem 0.5rem;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .social-icons .icon:hover {
-            background-color: var(--light-green);
-            color: var(--dark-green);
+        .footer-ecosystem-item img {
+            height: 28px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 0.4rem;
+            filter: brightness(0) invert(1) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+
+        .footer-ecosystem-item span {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .footer-ecosystem-item:hover {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
             transform: translateY(-3px);
-            border-color: var(--light-green);
         }
 
-        .footer-contact p {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
+        .footer-ecosystem-item:hover img {
+            filter: none; /* Restores authentic full-color on hover */
+        }
+
+        .footer-ecosystem-item:hover span {
+            color: var(--neon-accent);
         }
 
         .footer-bottom {
@@ -552,10 +515,13 @@
         }
 
         /* Micro-Screen Media Adaptations */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .footer-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+            .footer-ecosystem-wrapper {
+                grid-column: span 3;
+                margin-top: 2rem;
             }
         }
 
@@ -563,6 +529,10 @@
             .header-container {
                 flex-direction: column;
                 gap: 1.25rem;
+            }
+            nav {
+                justify-content: center;
+                gap: 1rem;
             }
             .hero h1 {
                 font-size: 2.5rem;
@@ -574,14 +544,11 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
+            .footer-ecosystem-wrapper {
+                grid-column: span 1;
+            }
             .section-grid {
                 grid-template-columns: 1fr;
-            }
-            .ecosystem-row {
-                gap: 2rem;
-            }
-            .ecosystem-item img {
-                height: 38px;
             }
         }
     </style>
@@ -596,6 +563,8 @@
                 <a href="#services">Services</a>
                 <a href="#projects">Free Projects</a>
                 <a href="#support">Support</a>
+                <a href="#" class="nav-btn">Best Books</a>
+                <a href="#" class="nav-btn">Hardware Store</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -634,42 +603,6 @@
                 <h3>School Management Engine</h3>
                 <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
                 <a href="#" class="project-link">Clone Repository ↗</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="ecosystem-container">
-            <div class="ecosystem-header">
-                <h3>Our Freelance & Payment Integrations</h3>
-                <p>Hire us directly or clear milestones across globally accepted secure payment platforms</p>
-            </div>
-            
-            <div class="ecosystem-row">
-                <a href="https://github.com/GreenTechSoftware" class="ecosystem-item" target="_blank" title="GitHub Open Source Hub">
-                    <img src="github.png" alt="GitHub Profile">
-                    <span>GITHUB</span>
-                </a>
-
-                <a href="#" class="ecosystem-item" target="_blank" title="Hire us on Upwork">
-                    <img src="upwork.png" alt="Upwork Verified">
-                    <span>UPWORK</span>
-                </a>
-
-                <a href="#" class="ecosystem-item" target="_blank" title="eBay Storefront Link">
-                    <img src="ebay.png" alt="eBay Store">
-                    <span>EBAY</span>
-                </a>
-
-                <div class="ecosystem-item" title="B2B Global Bank Wire Support">
-                    <img src="payoneer.png" alt="Payoneer Connected">
-                    <span>PAYONEER</span>
-                </div>
-
-                <div class="ecosystem-item" title="Instant Direct Payments Enabled">
-                    <img src="instapay.png" alt="InstaPay Network">
-                    <span>INSTAPAY</span>
-                </div>
             </div>
         </div>
     </section>
@@ -763,6 +696,7 @@
 
     <footer class="site-footer">
         <div class="footer-container">
+            
             <div class="footer-brand">
                 <h3 class="footer-logo">GreenTech<span>Software</span></h3>
                 <p class="footer-bio">Building clean, sustainable, and high-performance digital systems that drive growth across worldwide industries.</p>
@@ -779,18 +713,37 @@
             </div>
 
             <div class="footer-links">
-                <h4>Social Hubs</h4>
-                <div class="social-icons">
-                    <a href="#" class="icon" title="LinkedIn">In</a>
-                    <a href="https://github.com/GreenTechSoftware" class="icon" title="GitHub">Git</a>
-                    <a href="https://www.facebook.com/share/1bV4XWm3r2/" class="icon" title="Facebook">Fb</a>
+                <h4>Smart Support</h4>
+                <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem;">📧 contact@greentechsoftware.com</p>
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Milestone processing available 24/7 globally.</p>
+            </div>
+
+            <div class="footer-ecosystem-wrapper">
+                <h4>Ecosystem Integrations</h4>
+                <div class="footer-ecosystem-grid">
+                    <a href="https://github.com/GreenTechSoftware" class="footer-ecosystem-item" target="_blank">
+                        <img src="github.png" alt="GitHub">
+                        <span>GITHUB</span>
+                    </a>
+                    <a href="#" class="footer-ecosystem-item" target="_blank">
+                        <img src="upwork.png" alt="Upwork">
+                        <span>UPWORK</span>
+                    </a>
+                    <a href="#" class="footer-ecosystem-item" target="_blank">
+                        <img src="ebay.png" alt="eBay">
+                        <span>EBAY</span>
+                    </a>
+                    <div class="footer-ecosystem-item">
+                        <img src="payoneer.png" alt="Payoneer">
+                        <span>PAYONEER</span>
+                    </div>
+                    <div class="footer-ecosystem-item">
+                        <img src="instapay.png" alt="InstaPay">
+                        <span>INSTAPAY</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-contact">
-                <h4>Smart Support</h4>
-                <p>📧 contact@greentechsoftware.com</p>
-            </div>
         </div>
 
         <div class="footer-bottom">
