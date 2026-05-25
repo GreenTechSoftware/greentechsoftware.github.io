@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenTechSoftware | Integrated Sustainable Solutions</title>
+    <title>GreenTechSoftware | Mobile Software | EGYPT</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,6 +221,31 @@
             gap: 2.5rem;
         }
 
+        /* Horizontal Slider Layout Framework for Books & Store */
+        .slider-wrapper {
+            overflow-x: auto;
+            display: flex;
+            gap: 2rem;
+            padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar Styling for sliders */
+        .slider-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        .slider-wrapper::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.05);
+            border-radius: 10px;
+        }
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(10, 58, 32, 0.2);
+            border-radius: 10px;
+        }
+        .slider-wrapper::-webkit-scrollbar-thumb:hover {
+            background: var(--mid-green);
+        }
+
         /* Base Card Styling Framework */
         .display-card {
             background: var(--white);
@@ -232,6 +257,12 @@
             position: relative;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Lock layout sizing inside sliders */
+        .slider-wrapper .display-card {
+            flex: 0 0 320px;
+            padding: 2.2rem 1.8rem;
         }
 
         .display-card::before {
@@ -294,6 +325,18 @@
             width: fit-content;
         }
 
+        .pdf-tag {
+            font-family: monospace;
+            background-color: #F1F5F9;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 1.5rem;
+            word-break: break-all;
+        }
+
         .project-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -314,6 +357,33 @@
 
         .project-link:hover {
             color: var(--dark-green);
+        }
+
+        /* Hardware Matrix Grid Specifications */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: auto;
+            font-size: 0.85rem;
+        }
+
+        .specs-table td {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #F1F5F9;
+            color: var(--text-muted);
+        }
+
+        .specs-table td strong {
+            color: var(--dark-green);
+        }
+
+        .specs-table tr:last-child td {
+            border: none;
+        }
+
+        .price-text {
+            color: var(--mid-green) !important;
+            font-weight: 700;
         }
 
         /* Performance Form Workspace */
@@ -494,7 +564,7 @@
         }
 
         .footer-ecosystem-item:hover img {
-            filter: none; /* Restores authentic full-color on hover */
+            filter: none;
         }
 
         .footer-ecosystem-item:hover span {
@@ -562,9 +632,9 @@
                 <a href="#hero">Home</a>
                 <a href="#services">Services</a>
                 <a href="#projects">Free Projects</a>
+                <a href="#books">Best Books</a>
+                <a href="#hardware">Hardware Store</a>
                 <a href="#support">Support</a>
-                <a href="#" class="nav-btn">Best Books</a>
-                <a href="#" class="nav-btn">Hardware Store</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -577,6 +647,105 @@
             <a href="#contact" class="cta-btn">
                 Launch Your Project <span class="arrow">→</span>
             </a>
+        </div>
+    </section>
+
+    <section class="content-section" id="books">
+        <h2 class="section-title">Free Books Digital Library</h2>
+        
+        <div class="slider-wrapper">
+            <div class="display-card">
+                <span class="badge">Networking</span>
+                <h3>Cisco CCNA Prep Guide</h3>
+                <p class="project-desc">Complete core study guide exploring routing paradigms, network topologies, IP addressing schemes, and deployment metrics.</p>
+                <div class="pdf-tag">📄 ccna_200-301_official_guide.pdf</div>
+                <a href="#" class="project-link">Download E-Book 📥</a>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Architecture</span>
+                <h3>Enterprise WAN Systems</h3>
+                <p class="project-desc">Advanced systems blueprint for production enterprise grids running scalable multi-area OSPF and BGP border links.</p>
+                <div class="pdf-tag">📄 enterprise_routing_switching_v4.pdf</div>
+                <a href="#" class="project-link">Download E-Book 📥</a>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Hardware Setup</span>
+                <h3>Cisco UCS Configuration</h3>
+                <p class="project-desc">Engineering reference manual tracking installation, blade mapping, provisioning arrays, and logical fabric scaling loops.</p>
+                <div class="pdf-tag">📄 ucs_servers_deployment_intro.pdf</div>
+                <a href="#" class="project-link">Download E-Book 📥</a>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Security Grid</span>
+                <h3>Network Security Bounds</h3>
+                <p class="project-desc">Practical handbook dealing with hardware firewalls, structural isolation setups, and access control list criteria.</p>
+                <div class="pdf-tag">📄 security_fundamentals_handbook.pdf</div>
+                <a href="#" class="project-link">Download E-Book 📥</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="hardware">
+        <h2 class="section-title">Cisco Hardware Store</h2>
+        
+        <div class="slider-wrapper">
+            <div class="display-card">
+                <span class="badge">Server</span>
+                <h3>Cisco UCS C220 M6</h3>
+                <p class="project-desc">High-density 1U rack server optimized for large-scale enterprise virtualization, cloud tasks, and analytical computing matrix operations.</p>
+                <table class="specs-table">
+                    <tr><td><strong>Quantity:</strong></td><td>14 units</td></tr>
+                    <tr><td><strong>Shipping From:</strong></td><td>Amsterdam, NL</td></tr>
+                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$2,450 USD</td></tr>
+                </table>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Router</span>
+                <h3>Cisco ISR 1111-8P</h3>
+                <p class="project-desc">Integrated Services Router delivering robust cloud-ready WAN capabilities, secure link connectivity, and internal network filtering layers.</p>
+                <table class="specs-table">
+                    <tr><td><strong>Quantity:</strong></td><td>25 units</td></tr>
+                    <tr><td><strong>Shipping From:</strong></td><td>Singapore</td></tr>
+                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$850 USD</td></tr>
+                </table>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Switch</span>
+                <h3>Catalyst 9300 Switch</h3>
+                <p class="project-desc">Premier stackable enterprise access switching component built for advanced IoT, secure smart spaces, and high-bandwidth deployment setups.</p>
+                <table class="specs-table">
+                    <tr><td><strong>Quantity:</strong></td><td>42 units</td></tr>
+                    <tr><td><strong>Shipping From:</strong></td><td>San Jose, USA</td></tr>
+                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$4,200 USD</td></tr>
+                </table>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Memory RAM</span>
+                <h3>Cisco 64GB DDR4 RAM</h3>
+                <p class="project-desc">Factory-sealed high-performance registered ECC DIMM enterprise memory component running at high clock speed variables.</p>
+                <table class="specs-table">
+                    <tr><td><strong>Quantity:</strong></td><td>120 units</td></tr>
+                    <tr><td><strong>Shipping From:</strong></td><td>Frankfurt, DE</td></tr>
+                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$195 USD</td></tr>
+                </table>
+            </div>
+
+            <div class="display-card">
+                <span class="badge">Edge Routing</span>
+                <h3>Cisco ASR 1001-X</h3>
+                <p class="project-desc">Aggregation services engine designed to control massive traffic flows and service integration logic at network provider borders.</p>
+                <table class="specs-table">
+                    <tr><td><strong>Quantity:</strong></td><td>6 units</td></tr>
+                    <tr><td><strong>Shipping From:</strong></td><td>Tokyo, JP</td></tr>
+                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$8,900 USD</td></tr>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -743,8 +912,7 @@
                         <span>BanqueMisr</span>
                     </div>
                      
-                    </div>
-                
+                </div>
             </div>
 
         </div>
