@@ -119,23 +119,22 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* Project Preview Media Placeholder Styles */
+        /* Project Preview Media Styles - Updated for full container coverage */
         .project-preview-img {
             width: 100%;
             height: 180px;
             border-radius: 12px;
             margin-bottom: 1.5rem;
-            object-fit: cover;
+            overflow: hidden;
             background: linear-gradient(135deg, var(--mid-green) 0%, var(--dark-green) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border: 1px solid rgba(34, 197, 94, 0.2);
-            color: var(--neon-accent);
-            font-weight: 600;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
+        }
+
+        .project-preview-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Cyber-Premium Hero Workspace */
@@ -826,36 +825,37 @@
         <h2 class="section-title">Open Source Ecosystem</h2>
         
         <div class="section-grid">
-    <div class="display-card">
-        <div class="project-preview-img">
-            <img src="Generator.png" alt="Checksum Generator" width="40" height="40">
-        </div>
-        <span class="badge">Checksum Generator</span>
-        <h3>15-Digit Checksum Generator</h3>
-        <p class="project-desc">High-performance implementation of custom math validation algorithms. Perfect for checking system configurations, tracking numbers, or processing data strings reliably.</p>
-        <a href="https://github.com/MahmoudSharkawy/IMEIchecksum-generator" class="project-link">View Source Code ↗</a>
-    </div>
+            <div class="display-card">
+                <div class="project-preview-img">
+                    <img src="Generator.png" alt="Checksum Generator">
+                </div>
+                <span class="badge">Checksum Generator</span>
+                <h3>15-Digit Checksum Generator</h3>
+                <p class="project-desc">High-performance implementation of custom math validation algorithms. Perfect for checking system configurations, tracking numbers, or processing data strings reliably.</p>
+                <a href="https://github.com/MahmoudSharkawy/IMEIchecksum-generator" class="project-link">View Source Code ↗</a>
+            </div>
 
-    <div class="display-card">
-        <div class="project-preview-img">
-            <img src="AURA.png" alt="AuraFix Suite" width="40" height="40">
-        </div>
-        <span class="badge">AuraFix Suite Core</span>
-        <h3>GSM Unlocking Network Services</h3>
-        <p class="project-desc">A structured PHP web application template designed to link up with remote GSM servers, handle phone unlock queries, and update device network profiles smoothly.</p>
-        <a href="https://github.com/GreenTechSoftware/AuraFix-Suite-Core" class="project-link">Explore Repository ↗</a>
-    </div>
+            <div class="display-card">
+                <div class="project-preview-img">
+                    <img src="AURA.png" alt="AuraFix Suite">
+                </div>
+                <span class="badge">AuraFix Suite Core</span>
+                <h3>GSM Unlocking Network Services</h3>
+                <p class="project-desc">A structured PHP web application template designed to link up with remote GSM servers, handle phone unlock queries, and update device network profiles smoothly.</p>
+                <a href="https://github.com/GreenTechSoftware/AuraFix-Suite-Core" class="project-link">Explore Repository ↗</a>
+            </div>
 
-    <div class="display-card">
-        <div class="project-preview-img">
-            <img src="SME.png" alt="School Management Engine" width="40" height="40">
+            <div class="display-card">
+                <div class="project-preview-img">
+                    <img src="SME.png" alt="School Management Engine">
+                </div>
+                <span class="badge">SME School Management Engine</span>
+                <h3>School Management Engine</h3>
+                <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
+                <a href="#" class="project-link">Clone Repository ↗</a>
+            </div>
         </div>
-        <span class="badge">SME School Management Engine</span>
-        <h3>School Management Engine</h3>
-        <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
-        <a href="#" class="project-link">Clone Repository ↗</a>
-    </div>
-</div>
+    </section>
 
     <section class="content-section" id="services">
         <h2 class="section-title">Our Technical Offerings</h2>
@@ -926,17 +926,8 @@
                         <input type="email" id="email" name="email" required placeholder="name@example.com">
                     </div>
                     <div class="form-group">
-                        <label for="sector">Target Sector</label>
-                        <select id="sector" name="sector" required>
-                            <option value="" disabled selected>Select your service alignment</option>
-                            <option value="individual">Individual Solutions</option>
-                            <option value="enterprise">Enterprise Solutions</option>
-                            <option value="education">Educational Tech</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Description</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your digital goals..."></textarea>
+                        <label for="message">Project Requirements</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Describe your project goals or queries..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
@@ -946,65 +937,65 @@
 
     <footer class="site-footer">
         <div class="footer-container">
-            
             <div class="footer-brand">
-                <h3 class="footer-logo">GreenTech<span>Software</span></h3>
-                <p class="footer-bio">Building clean, sustainable, and high-performance digital systems that drive growth across worldwide industries.</p>
+                <div class="footer-logo">GreenTech<span>Software</span></div>
+                <p class="footer-bio">Engineering sustainable corporate platforms, modular school setups, and high-performance system configurations throughout Egypt and globally.</p>
             </div>
-
             <div class="footer-links">
-                <h4>Explore</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Free Projects</a></li>
-                    <li><a href="#support">Support System</a></li>
+                    <li><a href="#books">E-Books</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
-                <h4>Smart Support</h4>
-                <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem;">📧 contact@greentechsoftware.com</p>
-                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">Milestone processing available 24/7 globally.</p>
+                <h4>Utility Links</h4>
+                <ul>
+                    <li><a href="#hardware">Hardware Store</a></li>
+                    <li><a href="#support">Support Packages</a></li>
+                    <li><a href="#contact">Contact Workspace</a></li>
+                </ul>
             </div>
-
             <div class="footer-ecosystem-wrapper">
-                <h4>Ecosystem Integrations</h4>
+                <h4>System Channels</h4>
                 <div class="footer-ecosystem-grid">
-                    <a href="https://www.upwork.com" class="footer-ecosystem-item" target="_blank">
-                        <div class="eco-icon">💼</div>
-                        <span>UPWORK</span>
+                    <a href="https://github.com/GreenTechSoftware" class="footer-ecosystem-item" target="_blank">
+                        <div class="eco-icon">🐙</div>
+                        <span>GitHub Profile</span>
                     </a>
-                    <a href="https://www.ebay.com" class="footer-ecosystem-item" target="_blank">
-                        <div class="eco-icon">🛒</div>
-                        <span>EBAY</span>
+                    <a href="#" class="footer-ecosystem-item">
+                        <div class="eco-icon">💼</div>
+                        <span>LinkedIn Page</span>
                     </a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GreenTechSoftware. All rights reserved.</p>
+            <p>&copy; 2026 GreenTechSoftware. Developed and optimized for global deployment vectors. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Responsive Menu Toggle Engine
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.querySelectorAll('#nav-menu a');
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('mobile-menu-btn');
+            const navMenu = document.getElementById('nav-menu');
 
-        // Toggle mobile nav viewport active state
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
 
-        // Close menu cleanly upon user selecting any nav targets
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+                // Close menu gracefully when anchor connections are requested
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
         });
     </script>
 </body>
