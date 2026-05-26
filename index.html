@@ -547,10 +547,10 @@
             padding-left: 4px;
         }
 
-        /* Shifted Image Integration Workspace inside Footer */
+        /* Shifted Icon Integration Workspace inside Footer */
         .footer-ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.25rem;
             align-items: center;
         }
@@ -561,25 +561,22 @@
             align-items: center;
             text-decoration: none;
             background: rgba(255, 255, 255, 0.03);
-            padding: 0.75rem 0.5rem;
+            padding: 1rem 0.5rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
 
-        .footer-ecosystem-item img {
-            height: 28px;
-            width: auto;
-            object-fit: contain;
+        .footer-ecosystem-item .eco-icon {
+            font-size: 1.5rem;
             margin-bottom: 0.4rem;
-            filter: brightness(0) invert(1) opacity(0.7);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .footer-ecosystem-item span {
-            font-size: 0.68rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             letter-spacing: 0.5px;
             text-align: center;
         }
@@ -590,8 +587,8 @@
             transform: translateY(-3px);
         }
 
-        .footer-ecosystem-item:hover img {
-            filter: none;
+        .footer-ecosystem-item:hover .eco-icon {
+            transform: scale(1.1);
         }
 
         .footer-ecosystem-item:hover span {
@@ -865,7 +862,7 @@
                 </div>
                 <span class="badge">Cybersecurity</span>
                 <h3>Automated Firewall Audit Toolkit</h3>
-                <p class="project-desc">A lightweight Shell/Python auditing tool constructed to parsing large access logs, map suspicious external requests, and optimize rules for local routing machines.</p>
+                <p class="project-desc">A lightweight Shell/Python auditing tool constructed to parse large access logs, map suspicious external requests, and optimize rules for local routing machines.</p>
                 <a href="#" class="project-link">Clone Repository ↗</a>
             </div>
         </div>
@@ -985,13 +982,12 @@
             <div class="footer-ecosystem-wrapper">
                 <h4>Ecosystem Integrations</h4>
                 <div class="footer-ecosystem-grid">
-                    
-                    <a href="#" class="footer-ecosystem-item" target="_blank">
-                        <img src="upwork.png" alt="Upwork">
+                    <a href="https://www.upwork.com" class="footer-ecosystem-item" target="_blank">
+                        <div class="eco-icon">💼</div>
                         <span>UPWORK</span>
                     </a>
-                    <a href="#" class="footer-ecosystem-item" target="_blank">
-                        <img src="ebay.png" alt="Ebay">
+                    <a href="https://www.ebay.com" class="footer-ecosystem-item" target="_blank">
+                        <div class="eco-icon">🛒</div>
                         <span>EBAY</span>
                     </a>
                 </div>
