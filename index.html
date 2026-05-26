@@ -137,9 +137,13 @@
             display: block;
         }
 
-        /* Cyber-Premium Hero Workspace */
+        /* Cyber-Premium Hero Workspace - Updated with Dark Effect Background Image */
         .hero {
-            background: radial-gradient(circle at top right, var(--mid-green), var(--dark-green));
+            background: linear-gradient(rgba(4, 36, 20, 0.85), rgba(4, 36, 20, 0.85)), url('BACG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Switch to fixed if you prefer a parallax effect */
             color: var(--white);
             text-align: center;
             padding: 9rem 1.5rem;
@@ -155,11 +159,24 @@
             pointer-events: none;
         }
 
+        .hero-container-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
+            max-width: 600px;
+            margin: 0;
         }
 
         .hero h1 {
@@ -176,7 +193,7 @@
         .hero p {
             font-size: 1.25rem;
             max-width: 650px;
-            margin: 0 auto 3.5rem auto;
+            margin: 0 0 3.5rem 0;
             color: rgba(248, 250, 252, 0.85);
             font-weight: 300;
         }
@@ -686,55 +703,56 @@
                 grid-template-columns: 1fr;
             }
         }
+
         .hero-image-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Target Image Styling with Custom Floating Animation */
-.hero-animated-img {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    filter: drop-shadow(0 15px 30px rgba(74, 222, 128, 0.15));
-    animation: floatAnimation 6s ease-in-out infinite;
-}
+        /* Target Image Styling with Custom Floating Animation */
+        .hero-animated-img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(74, 222, 128, 0.15));
+            animation: floatAnimation 6s ease-in-out infinite;
+        }
 
-/* Keyframe Fluid Physics Engine for Floating Effect */
-@keyframes floatAnimation {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
+        /* Keyframe Fluid Physics Engine for Floating Effect */
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
-/* Responsive Overrides to ensure it stack cleanly on smaller screens */
-@media (max-width: 992px) {
-    .hero {
-        padding: 7rem 1.5rem 4rem 1.5rem;
-    }
-    .hero-container-flex {
-        flex-direction: column-reverse; /* Put image on top or bottom smoothly on mobile */
-        text-align: center;
-        gap: 2.5rem;
-    }
-    .hero-content {
-        max-width: 100%;
-    }
-    .hero p {
-        margin: 0 auto 2.5rem auto;
-    }
-    .hero-animated-img {
-        max-width: 320px; /* Scaled down slightly for mobile viewing spaces */
-    }
-}
+        /* Responsive Overrides to ensure it stack cleanly on smaller screens */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 7rem 1.5rem 4rem 1.5rem;
+            }
+            .hero-container-flex {
+                flex-direction: column-reverse; /* Put image on top or bottom smoothly on mobile */
+                text-align: center;
+                gap: 2.5rem;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero p {
+                margin: 0 auto 2.5rem auto;
+            }
+            .hero-animated-img {
+                max-width: 320px; /* Scaled down slightly for mobile viewing spaces */
+            }
+        }
     </style>
 </head>
 <body>
@@ -761,21 +779,20 @@
         </div>
     </header>
 
-   <section class="hero" id="hero">
-    <div class="hero-container-flex">
-        <div class="hero-content">
-            <h1>Sustainable & Custom Software Architecture</h1>
-            <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize educational institutions.</p>
-            <a href="#contact" class="cta-btn">
-                Launch Your Project <span class="arrow">→</span>
-            </a>
+    <section class="hero" id="hero">
+        <div class="hero-container-flex">
+            <div class="hero-content">
+                <h1>Sustainable & Custom Software Architecture</h1>
+                <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize educational institutions.</p>
+                <a href="#contact" class="cta-btn">
+                    Launch Your Project <span class="arrow">→</span>
+                </a>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="BACG.jpg" alt="GreenTech Software Architecture Illustration" class="hero-animated-img">
+            </div>
         </div>
-        <div class="hero-image-wrapper">
-            <!-- You can replace this src with your own vector/PNG image file -->
-            <img src="BACG.jpg" alt="GreenTech Software Architecture Illustration" class="hero-animated-img">
-        </div>
-    </div>
-</section>
+    </section>
 
     <section class="content-section" id="books">
         <h2 class="section-title">Free Books Digital Library</h2>
@@ -947,111 +964,5 @@
             </div>
         </div>
     </section>
-
-    <section class="content-section" id="support">
-        <h2 class="section-title">Smart Support Solutions</h2>
-        
-        <div class="section-grid">
-            <div class="display-card">
-                <h3>Managed Cloud Architectures</h3>
-                <p class="project-desc">Continuous server checks, auto-scaling configuration setups, and data recovery loops designed to keep your target platforms completely online.</p>
-            </div>
-            <div class="display-card">
-                <h3>API Maintenance & Refactoring</h3>
-                <p class="project-desc">Proactive identification of bottleneck risks, security patch additions, and performance updates for critical external system linkages.</p>
-            </div>
-            <div class="display-card">
-                <h3>Direct Developer Support</h3>
-                <p class="project-desc">Immediate code-level reviews and direct architecture calls tailored to solve complex issues for engineering teams in real time.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="form-card">
-                <form action="https://formspree.io/f/your_form_id" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name / Enterprise Entity</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="name@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Requirements</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Describe your project goals or queries..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="footer-logo">GreenTech<span>Software</span></div>
-                <p class="footer-bio">Engineering sustainable corporate platforms, modular school setups, and high-performance system configurations throughout Egypt and globally.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Free Projects</a></li>
-                    <li><a href="#books">E-Books</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Utility Links</h4>
-                <ul>
-                    <li><a href="#hardware">Hardware Store</a></li>
-                    <li><a href="#support">Support Packages</a></li>
-                    <li><a href="#contact">Contact Workspace</a></li>
-                </ul>
-            </div>
-            <div class="footer-ecosystem-wrapper">
-                <h4>System Channels</h4>
-                <div class="footer-ecosystem-grid">
-                    <a href="https://github.com/GreenTechSoftware" class="footer-ecosystem-item" target="_blank">
-                        <div class="eco-icon">🐙</div>
-                        <span>GitHub Profile</span>
-                    </a>
-                    <a href="#" class="footer-ecosystem-item">
-                        <div class="eco-icon">💼</div>
-                        <span>LinkedIn Page</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 GreenTechSoftware. Developed and optimized for global deployment vectors. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('mobile-menu-btn');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', () => {
-                    menuToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close menu gracefully when anchor connections are requested
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
