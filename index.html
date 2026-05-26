@@ -686,6 +686,55 @@
                 grid-template-columns: 1fr;
             }
         }
+        .hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Target Image Styling with Custom Floating Animation */
+.hero-animated-img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(74, 222, 128, 0.15));
+    animation: floatAnimation 6s ease-in-out infinite;
+}
+
+/* Keyframe Fluid Physics Engine for Floating Effect */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive Overrides to ensure it stack cleanly on smaller screens */
+@media (max-width: 992px) {
+    .hero {
+        padding: 7rem 1.5rem 4rem 1.5rem;
+    }
+    .hero-container-flex {
+        flex-direction: column-reverse; /* Put image on top or bottom smoothly on mobile */
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero p {
+        margin: 0 auto 2.5rem auto;
+    }
+    .hero-animated-img {
+        max-width: 320px; /* Scaled down slightly for mobile viewing spaces */
+    }
+}
     </style>
 </head>
 <body>
@@ -712,7 +761,8 @@
         </div>
     </header>
 
-    <section class="hero" id="hero">
+   <section class="hero" id="hero">
+    <div class="hero-container-flex">
         <div class="hero-content">
             <h1>Sustainable & Custom Software Architecture</h1>
             <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize educational institutions.</p>
@@ -720,7 +770,12 @@
                 Launch Your Project <span class="arrow">→</span>
             </a>
         </div>
-    </section>
+        <div class="hero-image-wrapper">
+            <!-- You can replace this src with your own vector/PNG image file -->
+            <img src="hero-tech.svg" alt="GreenTech Software Architecture Illustration" class="hero-animated-img">
+        </div>
+    </div>
+</section>
 
     <section class="content-section" id="books">
         <h2 class="section-title">Free Books Digital Library</h2>
