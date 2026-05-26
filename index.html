@@ -64,6 +64,7 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .logo {
@@ -71,17 +72,18 @@
             font-weight: 800;
             color: var(--white);
             letter-spacing: -0.5px;
+            z-index: 1001;
         }
 
         .logo span {
             color: var(--light-green);
         }
 
+        /* Desktop Navigation Rules */
         nav {
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            flex-wrap: wrap;
         }
 
         nav a {
@@ -96,19 +98,44 @@
             color: var(--neon-accent);
         }
 
-        /* Highlight buttons for Head Nav */
-        nav a.nav-btn {
-            background-color: rgba(34, 197, 94, 0.15);
-            padding: 0.4rem 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: var(--neon-accent);
+        /* Hamburger Menu Icon */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
         }
 
-        nav a.nav-btn:hover {
-            background-color: var(--light-green);
-            color: var(--dark-green);
-            border-color: var(--light-green);
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Project Preview Media Placeholder Styles */
+        .project-preview-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--mid-green) 0%, var(--dark-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: var(--neon-accent);
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         /* Cyber-Premium Hero Workspace */
@@ -217,7 +244,7 @@
         /* Responsive Grid Frameworks */
         .section-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
         }
 
@@ -249,7 +276,7 @@
         /* Base Card Styling Framework */
         .display-card {
             background: var(--white);
-            padding: 3rem 2.5rem;
+            padding: 2.5rem 2rem;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(15, 23, 42, 0.03);
@@ -288,8 +315,8 @@
 
         .display-card h3 {
             color: var(--dark-green);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
             font-weight: 700;
         }
 
@@ -584,7 +611,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Micro-Screen Media Adaptations */
+        /* Responsive Screen Media Adaptations */
         @media (max-width: 1024px) {
             .footer-container {
                 grid-template-columns: 1.5fr 1fr 1fr;
@@ -595,15 +622,57 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1.25rem;
+        /* Fully Fluid Navigation Breakpoint Rules */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: flex;
             }
+
             nav {
-                justify-content: center;
-                gap: 1rem;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: rgba(4, 36, 20, 0.98);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 6rem 2rem 2rem 2rem;
+                gap: 2rem;
+                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
             }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+                width: 100%;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            /* Hamburger animation transformations */
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+                background-color: var(--neon-accent);
+            }
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+                background-color: var(--neon-accent);
+            }
+        }
+
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -628,7 +697,14 @@
     <header>
         <div class="header-container">
             <div class="logo">GreenTech<span>Software</span></div>
-            <nav>
+            
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav id="nav-menu">
                 <a href="#hero">Home</a>
                 <a href="#services">Services</a>
                 <a href="#projects">Free Projects</a>
@@ -754,6 +830,9 @@
         
         <div class="section-grid">
             <div class="display-card">
+                <div class="project-preview-img">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                </div>
                 <span class="badge">Python Utility</span>
                 <h3>15-Digit Checksum Generator</h3>
                 <p class="project-desc">High-performance implementation of custom math validation algorithms. Perfect for checking system configurations, tracking numbers, or processing data strings reliably.</p>
@@ -761,6 +840,9 @@
             </div>
 
             <div class="display-card">
+                <div class="project-preview-img">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
                 <span class="badge">PHP / API Setup</span>
                 <h3>GSM Unlocking Network Services</h3>
                 <p class="project-desc">A structured PHP web application template designed to link up with remote GSM servers, handle phone unlock queries, and update device network profiles smoothly.</p>
@@ -768,9 +850,22 @@
             </div>
 
             <div class="display-card">
+                <div class="project-preview-img">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
                 <span class="badge">Laravel MVC Framework</span>
                 <h3>School Management Engine</h3>
                 <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
+                <a href="#" class="project-link">Clone Repository ↗</a>
+            </div>
+
+            <div class="display-card">
+                <div class="project-preview-img">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span class="badge">Cybersecurity</span>
+                <h3>Automated Firewall Audit Toolkit</h3>
+                <p class="project-desc">A lightweight Shell/Python auditing tool constructed to parsing large access logs, map suspicious external requests, and optimize rules for local routing machines.</p>
                 <a href="#" class="project-link">Clone Repository ↗</a>
             </div>
         </div>
@@ -896,31 +991,36 @@
                         <span>UPWORK</span>
                     </a>
                     <a href="#" class="footer-ecosystem-item" target="_blank">
-                        <img src="ebay.png" alt="eBay">
+                        <img src="ebay.png" alt="Ebay">
                         <span>EBAY</span>
                     </a>
-                    <div class="footer-ecosystem-item">
-                        <img src="payoneer.png" alt="Payoneer">
-                        <span>PAYONEER</span>
-                    </div>
-                    <div class="footer-ecosystem-item">
-                        <img src="instapay.png" alt="InstaPay">
-                        <span>INSTAPAY</span>
-                    </div>
-                     <div class="footer-ecosystem-item">
-                        <img src="bankmisr.png" alt="BanqueMisr">
-                        <span>BanqueMisr</span>
-                    </div>
-                     
                 </div>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 GreenTechSoftware. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        // Responsive Menu Toggle Engine
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('#nav-menu a');
+
+        // Toggle mobile nav viewport active state
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu cleanly upon user selecting any nav targets
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
