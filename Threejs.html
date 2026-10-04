@@ -24,7 +24,7 @@
             z-index: -1;
             pointer-events: none;
         }
-        /* تأثيرات الدائرة التفاعلية */
+        /* تأثيرات البطاقات */
         .glass-card {
             background: rgba(17, 24, 39, 0.6);
             backdrop-filter: blur(12px);
@@ -46,8 +46,24 @@
     <!-- محتوى الصفحة -->
     <main class="relative z-10">
         
+        <!-- شريط التنقل العلوي -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f0e]/80 backdrop-blur-md border-b border-emerald-500/10">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="#" class="text-2xl font-black text-emerald-400 tracking-wider">EcoPulse</a>
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                    <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
+                    <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
+                    <a href="#projects" class="hover:text-emerald-400 transition-colors">مشاريعنا</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
+                </nav>
+                <a href="#contact" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-emerald-500/30 transition-all">
+                    احصل على استشارة
+                </a>
+            </div>
+        </header>
+
         <!-- 1. قسم الـ Hero (البداية) -->
-        <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
             <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50">
                 برمجيات مستدامة لجيل المستقبل
             </span>
@@ -67,67 +83,134 @@
             </div>
         </section>
 
-        <!-- 2. قسم القائمة المجسمة الدائرية للخدمات -->
+        <!-- 2. قسم عن الشركة (About Us) -->
+        <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">رواد التحول الرقمي الأخضر في قطاع البرمجيات</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        نحن شركة رائدة متخصصة في هندسة وتطوير الأنظمة التقنية مع التركيز الكامل على كفاءة استهلاك الطاقة، خفض الانبعاثات الكربونية في مراكز البيانات، وتقديم بنى تحتية ذكية ومستدامة.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">+100</span>
+                            <span class="text-gray-400 text-sm">مشروع ناجح</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">40%</span>
+                            <span class="text-gray-400 text-sm">تخفيض في استهلاك الطاقة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-emerald-500/20 relative">
+                    <div class="absolute inset-0 bg-emerald-500/5 rounded-3xl blur-xl"></div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">رؤيتنا المبتكرة</h3>
+                    <p class="text-gray-300 relative z-10 leading-relaxed">
+                        نؤمن بأن التطور التقني لا يجب أن يكون على حساب كوكب الأرض. ندمج بين أحدث خوارزميات الذكاء الاصطناعي وتصميم الأنظمة الموفرة للطاقة لضمان استدامة أعمال عملائنا للسنوات القادمة.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. قسم خدماتنا التخصصية -->
         <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا التخصصية</span></h2>
-                <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً برمجية متكاملة مصممة خصيصاً لترقية البنية التحتية لشركتك بأعلى كفاءة وأقل استهلاك للطاقة.</p>
+                <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً برمجية متكاملة مصممة خصيصاً لترقية البنية التحتية لشركتك بأعلى كفاءة.</p>
             </div>
 
-            <!-- شبكة الخدمات بتصميم دائري / شبكي تفاعلي مجسم -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- خدمة 1: تصميم وتطوير الويب -->
+                <!-- خدمة 1 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
                     <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🌐</div>
                     <h3 class="text-2xl font-bold mb-3">تصميم وتطوير الويب</h3>
                     <p class="text-gray-400 leading-relaxed">منصات ومواقع إلكترونية فائقة السرعة، متجاوبة، ومصممة بأحدث تقنيات الـ Frontend لتجربة مستخدم استثنائية.</p>
                 </div>
 
-                <!-- خدمة 2: تطبيقات الهاتف -->
+                <!-- خدمة 2 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
                     <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📱</div>
                     <h3 class="text-2xl font-bold mb-3">تطبيقات الهاتف المحمول</h3>
-                    <p class="text-gray-400 leading-relaxed">تطبيقات ذكية لأنظمة iOS و Android بأداء عالي، واجهات عصرية، واستهلاك منخفض لموارد بطارية الأجهزة.</p>
+                    <p class="text-gray-400 leading-relaxed">تطبيقات ذكية لأنظمة iOS و Android بأداء عالي، واجهات عصرية، واستهلاك منخفض لموارد الأجهزة.</p>
                 </div>
 
-                <!-- خدمة 3: قواعد البيانات والسحابة -->
+                <!-- خدمة 3 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
                     <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">☁️</div>
                     <h3 class="text-2xl font-bold mb-3">قواعد البيانات والسحابة</h3>
                     <p class="text-gray-400 leading-relaxed">إدارة وبناء قواعد بيانات متقدمة (SQL & NoSQL) مع هندسة سحابية آمنة وموزعة لضمان استمرارية البيانات.</p>
                 </div>
 
-                <!-- خدمة 4: تجديد أنظمة المعلومات -->
+                <!-- خدمة 4 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
                     <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🔄</div>
                     <h3 class="text-2xl font-bold mb-3">تجديد أنظمة المعلومات</h3>
                     <p class="text-gray-400 leading-relaxed">تحديث الهياكل التقنية القديمة (Legacy Systems) ونقلها إلى أنظمة ذكية ومرنة تواكب المعايير الحديثة.</p>
                 </div>
 
-                <!-- خدمة 5: صيانة البرمجيات وتطويرها -->
+                <!-- خدمة 5 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group lg:col-span-2">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
                     <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">⚙️</div>
                     <h3 class="text-2xl font-bold mb-3">صيانة البرمجيات وتطويرها المستمر</h3>
                     <p class="text-gray-400 leading-relaxed">مراقبة الأكواد، ترقية الحزم البرمجية، معالجة الثغرات، وتحسين الأداء الدوري لضمان عمل أنظمتك بكفاءة مستدامة دون توقف.</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- 3. قسم تواصل معنا -->
-        <section id="contact" class="py-20 text-center border-t border-emerald-500/10">
-            <h2 class="text-3xl font-bold mb-4">جاهز للبدء بمشروعك الأخضر القادم؟</h2>
-            <p class="text-gray-400 mb-8">تواصل معنا اليوم لنحول أفكارك إلى واقع تقني مستدام.</p>
-            <a href="mailto:contact@ecopulse.tech" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20 inline-block">
-                راسلنا الآن
-            </a>
+        <!-- 4. قسم مشاريعنا السابقة (Projects) -->
+        <section id="projects" class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">سجل الأعمال</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">نماذج من <span class="text-emerald-400">مشاريعنا</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">نظرة على بعض الحلول البرمجية التي طورناها لعملائنا.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">منصة سحابية خضراء</div>
+                    <h3 class="text-xl font-bold mb-2">EcoCloud Manager</h3>
+                    <p class="text-gray-400 text-sm">نظام لإدارة الخوادم السحابية وتتبع معدل استهلاك الطاقة في مراكز البيانات.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">تطبيق ذكي للطاقة</div>
+                    <h3 class="text-xl font-bold mb-2">SmartGrid Mobile App</h3>
+                    <p class="text-gray-400 text-sm">تطبيق للهواتف الذكية لمراقبة والتحكم بالاستهلاك المنزلي والشركات للطاقة المتجددة.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">تحديث أنظمة المؤسسات</div>
+                    <h3 class="text-xl font-bold mb-2">Legacy-to-Cloud Core</h3>
+                    <p class="text-gray-400 text-sm">عملية تجديد شاملة لأنظمة معلومات مصرفية قديمة وتحويلها لبيئة سحابية آمنة.</p>
+                </div>
+            </div>
         </section>
+
+        <!-- 5. قسم تواصل معنا (Contact & Facebook) -->
+        <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
+            <div class="glass-card p-10 md:p-16 rounded-3xl border-emerald-500/20 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">جاهز للبدء بمشروعك القادم؟</h2>
+                <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو صفحتنا الرسمية على فيسبوك لنحول أفكارك إلى واقع تقني مذهل.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- زر الفيسبوك -->
+                    <a href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        تواصل عبر فيسبوك
+                    </a>
+                    <!-- زر البريد الإلكتروني -->
+                    <a href="mailto:contact@ecopulse.tech" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
+                        راسلنا بالبريد الإلكتروني
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- حقوق النشر -->
+        <footer class="py-8 text-center text-gray-500 text-sm border-t border-emerald-500/10">
+            جميع الحقوق محفوظة © 2026 EcoPulse GreenTech.
+        </footer>
     </main>
 
     <!-- مكتبة Three.js -->
