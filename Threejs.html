@@ -26,7 +26,7 @@
         }
         /* تأثيرات البطاقات */
         .glass-card {
-            background: rgba(17, 24, 39, 0.6);
+            background: rgba(17, 24, 39, 0.65);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(16, 185, 129, 0.2);
             transition: all 0.4s ease;
@@ -53,7 +53,7 @@
                 <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
                     <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
                     <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
-                    <a href="#projects" class="hover:text-emerald-400 transition-colors">مشاريعنا</a>
+                    <a href="#projects" class="hover:text-emerald-400 transition-colors">معرض المشاريع</a>
                     <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
                 </nav>
                 <a href="#contact" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-emerald-500/30 transition-all">
@@ -158,29 +158,49 @@
             </div>
         </section>
 
-        <!-- 4. قسم مشاريعنا السابقة (Projects) -->
+        <!-- 4. قسم معرض ومشروعات الشركة (مع الصور) -->
         <section id="projects" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">سجل الأعمال</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">نماذج من <span class="text-emerald-400">مشاريعنا</span></h2>
-                <p class="text-gray-400 max-w-xl mx-auto">نظرة على بعض الحلول البرمجية التي طورناها لعملائنا.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">معرض <span class="text-emerald-400">المشاريع التقنية</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">استعراض لأبرز الحلول والمنصات التي أنجزناها لعملائنا.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-6 rounded-3xl">
-                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">منصة سحابية خضراء</div>
-                    <h3 class="text-xl font-bold mb-2">EcoCloud Manager</h3>
-                    <p class="text-gray-400 text-sm">نظام لإدارة الخوادم السحابية وتتبع معدل استهلاك الطاقة في مراكز البيانات.</p>
+                <!-- المشروع الأول -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="EcoCloud" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f0e] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">منصة EcoCloud السحابية</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">نظام متطور لإدارة السحابة وخفض معدل استهلاك الطاقة في مراكز البيانات الضخمة.</p>
+                    </div>
                 </div>
-                <div class="glass-card p-6 rounded-3xl">
-                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">تطبيق ذكي للطاقة</div>
-                    <h3 class="text-xl font-bold mb-2">SmartGrid Mobile App</h3>
-                    <p class="text-gray-400 text-sm">تطبيق للهواتف الذكية لمراقبة والتحكم بالاستهلاك المنزلي والشركات للطاقة المتجددة.</p>
+
+                <!-- المشروع الثاني -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="SmartGrid App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f0e] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">تطبيق SmartGrid للتحكم</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">تطبيق هاتف ذكي لمراقبة وتحسين توزيع الطاقة المستدامة للمؤسسات والشركات.</p>
+                    </div>
                 </div>
-                <div class="glass-card p-6 rounded-3xl">
-                    <div class="h-48 bg-emerald-950/40 rounded-2xl mb-4 border border-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-lg">تحديث أنظمة المؤسسات</div>
-                    <h3 class="text-xl font-bold mb-2">Legacy-to-Cloud Core</h3>
-                    <p class="text-gray-400 text-sm">عملية تجديد شاملة لأنظمة معلومات مصرفية قديمة وتحويلها لبيئة سحابية آمنة.</p>
+
+                <!-- المشروع الثالث -->
+                <div class="glass-card rounded-3xl overflow-hidden group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Legacy Modernization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f0e] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">تحديث الأنظمة القديمة (Legacy)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">مشروع تجديد بنية معلوماتية مصرفية ضخمة ونقلها إلى بيئة عمل رقمية حديثة.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -194,7 +214,7 @@
                 <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو صفحتنا الرسمية على فيسبوك لنحول أفكارك إلى واقع تقني مذهل.</p>
                 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <!-- زر الفيسبوك -->
+                    <!-- زر الفيسبوك (استبدل YOUR_FACEBOOK_PAGE برابط صفحتك الحقيقي) -->
                     <a href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         تواصل عبر فيسبوك
@@ -220,7 +240,7 @@
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = newyticalPerspectiveCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 5;
 
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
