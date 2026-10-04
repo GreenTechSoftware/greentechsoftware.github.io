@@ -1,966 +1,348 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenTechSoftware | Mobile Software | EGYPT</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    
+    <title>GreenTech Software - Software & IT Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Design Variables & Modern Architecture System */
-        :root {
-            --dark-green: #042414;
-            --mid-green: #0A3A20;
-            --light-green: #22C55E;
-            --neon-accent: #4ADE80;
-            --bg-light: #F8FAFC;
-            --text-dark: #0F172A;
-            --text-muted: #475569;
-            --white: #FFFFFF;
-            --card-shadow: 0 10px 30px -10px rgba(4, 36, 20, 0.06);
-            --hover-shadow: 0 20px 40px -15px rgba(4, 36, 20, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            margin: 0;
+            background-color: #030712;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        /* Glassmorphic Fixed Navigation Bar */
-        header {
-            background-color: rgba(4, 36, 20, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: var(--white);
-            padding: 1.25rem 2rem;
-            position: sticky;
+        #webgl-container {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(34, 197, 94, 0.15);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--white);
-            letter-spacing: -0.5px;
-            z-index: 1001;
-        }
-
-        .logo span {
-            color: var(--light-green);
-        }
-
-        /* Desktop Navigation Rules */
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.92rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav a:hover {
-            color: var(--neon-accent);
-        }
-
-        /* Hamburger Menu Icon */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .menu-toggle .bar {
-            width: 100%;
-            height: 3px;
-            background-color: var(--white);
-            border-radius: 10px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Project Preview Media Styles - Updated for full container coverage */
-        .project-preview-img {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--mid-green) 0%, var(--dark-green) 100%);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-
-        .project-preview-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Cyber-Premium Hero Workspace - Updated with Dark Effect Background Image */
-        .hero {
-            background: linear-gradient(rgba(4, 36, 20, 0.85), rgba(4, 36, 20, 0.85)), url('BACG.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll; /* Switch to fixed if you prefer a parallax effect */
-            color: var(--white);
-            text-align: center;
-            padding: 9rem 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 60%, var(--bg-light));
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
             pointer-events: none;
         }
-
-        .hero-container-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
-            text-align: left;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            max-width: 600px;
-            margin: 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #FFFFFF, #BCF5BC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 0 3.5rem 0;
-            color: rgba(248, 250, 252, 0.85);
-            font-weight: 300;
-        }
-
-        /* Upgraded Interactive Launch Project CTA */
-        .cta-btn {
-            background-color: var(--light-green);
-            color: var(--dark-green);
-            padding: 1.15rem 3.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .cta-btn span.arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background-color: var(--neon-accent);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 35px rgba(74, 222, 128, 0.45);
-            padding-left: 3.75rem;
-            padding-right: 3.75rem;
-        }
-
-        .cta-btn:hover span.arrow {
-            transform: translateX(6px);
-        }
-
-        /* Common Section Typography Systems */
-        .content-section {
-            max-width: 1200px;
-            margin: 7rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--dark-green);
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 5px;
-            background-color: var(--light-green);
-            margin: 0.75rem auto 0 auto;
-            border-radius: 10px;
-        }
-
-        /* Responsive Grid Frameworks */
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        /* Horizontal Slider Layout Framework for Books & Store */
-        .slider-wrapper {
-            overflow-x: auto;
-            display: flex;
-            gap: 2rem;
-            padding: 1.5rem 0.5rem 2.5rem 0.5rem;
-            scroll-behavior: smooth;
-        }
-
-        /* Custom Scrollbar Styling for sliders */
-        .slider-wrapper::-webkit-scrollbar {
-            height: 8px;
-        }
-        .slider-wrapper::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.05);
-            border-radius: 10px;
-        }
-        .slider-wrapper::-webkit-scrollbar-thumb {
-            background: rgba(10, 58, 32, 0.2);
-            border-radius: 10px;
-        }
-        .slider-wrapper::-webkit-scrollbar-thumb:hover {
-            background: var(--mid-green);
-        }
-
-        /* Base Card Styling Framework */
-        .display-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(15, 23, 42, 0.03);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Lock layout sizing inside sliders */
-        .slider-wrapper .display-card {
-            flex: 0 0 320px;
-            padding: 2.2rem 1.8rem;
-        }
-
-        .display-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background-color: var(--mid-green);
-            border-radius: 20px 20px 0 0;
-            transition: background-color 0.3s;
-        }
-
-        .display-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .display-card:hover::before {
-            background-color: var(--light-green);
-        }
-
-        .display-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        /* Services Specific Rules */
-        .display-card ul { list-style-type: none; }
-        .display-card li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.75rem;
-            color: var(--text-muted);
-            font-size: 0.98rem;
-        }
-        .display-card li::before {
-            content: "✓";
-            color: var(--light-green);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Modern Project Preview Cards Specific Architecture */
-        .badge {
-            background-color: rgba(34, 197, 94, 0.1);
-            color: var(--mid-green);
-            padding: 0.25rem 0.75rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 1rem;
-            width: fit-content;
-        }
-
-        .pdf-tag {
-            font-family: monospace;
-            background-color: #F1F5F9;
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
-            border: 1px solid #E2E8F0;
-            margin-bottom: 1.5rem;
-            word-break: break-all;
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .project-link {
-            color: var(--light-green);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .project-link:hover {
-            color: var(--dark-green);
-        }
-
-        /* Hardware Matrix Grid Specifications */
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: auto;
-            font-size: 0.85rem;
-        }
-
-        .specs-table td {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #F1F5F9;
-            color: var(--text-muted);
-        }
-
-        .specs-table td strong {
-            color: var(--dark-green);
-        }
-
-        .specs-table tr:last-child td {
-            border: none;
-        }
-
-        .price-text {
-            color: var(--mid-green) !important;
-            font-weight: 700;
-        }
-
-        /* Performance Form Workspace */
-        .contact-section {
-            background-color: var(--white);
-            padding: 6rem 1.5rem;
-            border-top: 1px solid rgba(15, 23, 42, 0.05);
-        }
-
-        .contact-container {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .form-card {
-            background: var(--bg-light);
-            padding: 3.5rem 3rem;
-            border-radius: 24px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(15, 23, 42, 0.02);
-        }
-
-        .form-group {
-            margin-bottom: 1.75rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark-green);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            border: 1px solid #E2E8F0;
-            background-color: var(--white);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--text-dark);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--light-green);
-            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
-        }
-
-        .submit-btn {
-            background-color: var(--dark-green);
-            color: var(--white);
-            width: 100%;
-            padding: 1.1rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: 'Outfit', sans-serif;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(4, 36, 20, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--mid-green);
-            transform: translateY(-1px);
-        }
-
-        /* Modular Footer Framework */
-        .site-footer {
-            background-color: var(--dark-green);
-            color: var(--white);
-            padding: 5rem 2rem 2rem 2rem;
-            border-top: 5px solid var(--light-green);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr repeat(2, 1fr) 2fr;
-            gap: 3rem;
-        }
-
-        .footer-brand .footer-logo {
-            color: var(--white);
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-        }
-
-        .footer-brand .footer-logo span {
-            color: var(--light-green);
-        }
-
-        .footer-brand .footer-bio {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .site-footer h4 {
-            color: var(--white);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--neon-accent);
-            padding-left: 4px;
-        }
-
-        /* Shifted Icon Integration Workspace inside Footer */
-        .footer-ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            align-items: center;
-        }
-
-        .footer-ecosystem-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 1rem 0.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .footer-ecosystem-item .eco-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.4rem;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-ecosystem-item span {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.5px;
-            text-align: center;
-        }
-
-        .footer-ecosystem-item:hover {
-            background: rgba(34, 197, 94, 0.1);
-            border-color: rgba(34, 197, 94, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .footer-ecosystem-item:hover .eco-icon {
-            transform: scale(1.1);
-        }
-
-        .footer-ecosystem-item:hover span {
-            color: var(--neon-accent);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 4rem auto 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Responsive Screen Media Adaptations */
-        @media (max-width: 1024px) {
-            .footer-container {
-                grid-template-columns: 1.5fr 1fr 1fr;
-            }
-            .footer-ecosystem-wrapper {
-                grid-column: span 3;
-                margin-top: 2rem;
-            }
-        }
-
-        /* Fully Fluid Navigation Breakpoint Rules */
-        @media (max-width: 992px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background-color: rgba(4, 36, 20, 0.98);
-                backdrop-filter: blur(15px);
-                -webkit-backdrop-filter: blur(15px);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                padding: 6rem 2rem 2rem 2rem;
-                gap: 2rem;
-                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav a {
-                font-size: 1.1rem;
-                width: 100%;
-                padding-bottom: 0.5rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            /* Hamburger animation transformations */
-            .menu-toggle.active .bar:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-                background-color: var(--neon-accent);
-            }
-            .menu-toggle.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            .menu-toggle.active .bar:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-                background-color: var(--neon-accent);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .form-card {
-                padding: 2.5rem 1.5rem;
-            }
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            .footer-ecosystem-wrapper {
-                grid-column: span 1;
-            }
-            .section-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hero-image-wrapper {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Target Image Styling with Custom Floating Animation */
-        .hero-animated-img {
-            width: 100%;
-            max-width: 480px;
-            height: auto;
-            filter: drop-shadow(0 15px 30px rgba(74, 222, 128, 0.15));
-            animation: floatAnimation 6s ease-in-out infinite;
-        }
-
-        /* Keyframe Fluid Physics Engine for Floating Effect */
-        @keyframes floatAnimation {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Responsive Overrides to ensure it stack cleanly on smaller screens */
-        @media (max-width: 992px) {
-            .hero {
-                padding: 7rem 1.5rem 4rem 1.5rem;
-            }
-            .hero-container-flex {
-                flex-direction: column-reverse; /* Put image on top or bottom smoothly on mobile */
-                text-align: center;
-                gap: 2.5rem;
-            }
-            .hero-content {
-                max-width: 100%;
-            }
-            .hero p {
-                margin: 0 auto 2.5rem auto;
-            }
-            .hero-animated-img {
-                max-width: 320px; /* Scaled down slightly for mobile viewing spaces */
-            }
+        .glass-card {
+            background: rgba(6, 78, 59, 0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body>
+<body class="selection:bg-emerald-500 selection:text-black">
 
-    <header>
-        <div class="header-container">
-            <div class="logo">GreenTech<span>Software</span></div>
-            
-            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+    <div id="webgl-container"></div>
 
-            <nav id="nav-menu">
-                <a href="#hero">Home</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Free Projects</a>
-                <a href="#books">Best Books</a>
-                <a href="#hardware">Hardware Store</a>
-                <a href="#support">Support</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero" id="hero">
-        <div class="hero-container-flex">
-            <div class="hero-content">
-                <h1>Sustainable & Custom Software Architecture</h1>
-                <p>At GreenTechSoftware, we engineer scalable digital platforms built to empower individuals, expand enterprises, and modernize educational institutions.</p>
-                <a href="#contact" class="cta-btn">
-                    Launch Your Project <span class="arrow">→</span>
+    <main class="relative z-10">
+        
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-emerald-500/10">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="#" class="text-xl md:text-2xl font-black text-emerald-400 tracking-wider flex items-center gap-2">
+                    <span>GreenTech Software</span>
+                    <span class="text-lg">🇪🇬</span>
+                </a>
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                    <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
+                    <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
+                    <a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والتجديد</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
+                </nav>
+                <a href="#contact" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-emerald-500/35 transition-all">
+                    احصل على استشارة
                 </a>
             </div>
-            
-        </div>
-    </section>
+        </header>
 
-    <section class="content-section" id="books">
-        <h2 class="section-title">Free Books Digital Library</h2>
-        
-        <div class="slider-wrapper">
-            <div class="display-card">
-                <span class="badge">Networking</span>
-                <h3>Cisco CCNA Prep Guide</h3>
-                <p class="project-desc">Complete core study guide exploring routing paradigms, network topologies, IP addressing schemes, and deployment metrics.</p>
-                <div class="pdf-tag">📄 ccna_200-301_official_guide.pdf</div>
-                <a href="#" class="project-link">Download E-Book 📥</a>
+        <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+            <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50 flex items-center gap-2">
+                <span>حلول برمجية مستدامة وتجديد الأجهزة</span>
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mb-6 leading-tight">
+                نبني أنظمتك الرقمية ونوفر <br>أفضل <span class="text-emerald-400">حلول الأجهزة والتجديد</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-8">
+                نحول أفكارك إلى منصات ذكية ونقدم أنظمة معلومات متكاملة مع تجديد وبيع وشراء أجهزة الكمبيوتر والسيرفرات بكفاءة عالية.
+            </p>
+            <div class="flex gap-4">
+                <a href="#services" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
+                    استكشف خدماتنا
+                </a>
+                <a href="#hardware" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                    <span>أنظمة الأجهزة والسيرفرات</span>
+                </a>
             </div>
+        </section>
 
-            <div class="display-card">
-                <span class="badge">Architecture</span>
-                <h3>Enterprise WAN Systems</h3>
-                <p class="project-desc">Advanced systems blueprint for production enterprise grids running scalable multi-area OSPF and BGP border links.</p>
-                <div class="pdf-tag">📄 enterprise_routing_switching_v4.pdf</div>
-                <a href="#" class="project-link">Download E-Book 📥</a>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Hardware Setup</span>
-                <h3>Cisco UCS Configuration</h3>
-                <p class="project-desc">Engineering reference manual tracking installation, blade mapping, provisioning arrays, and logical fabric scaling loops.</p>
-                <div class="pdf-tag">📄 ucs_servers_deployment_intro.pdf</div>
-                <a href="#" class="project-link">Download E-Book 📥</a>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Security Grid</span>
-                <h3>Network Security Bounds</h3>
-                <p class="project-desc">Practical handbook dealing with hardware firewalls, structural isolation setups, and access control list criteria.</p>
-                <div class="pdf-tag">📄 security_fundamentals_handbook.pdf</div>
-                <a href="#" class="project-link">Download E-Book 📥</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section" id="hardware">
-        <h2 class="section-title">Cisco Hardware Store</h2>
-        
-        <div class="slider-wrapper">
-            <div class="display-card">
-                <span class="badge">Server</span>
-                <h3>Cisco UCS C220 M6</h3>
-                <p class="project-desc">High-density 1U rack server optimized for large-scale enterprise virtualization, cloud tasks, and analytical computing matrix operations.</p>
-                <table class="specs-table">
-                    <tr><td><strong>Quantity:</strong></td><td>14 units</td></tr>
-                    <tr><td><strong>Shipping From:</strong></td><td>Amsterdam, NL</td></tr>
-                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$2,450 USD</td></tr>
-                </table>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Router</span>
-                <h3>Cisco ISR 1111-8P</h3>
-                <p class="project-desc">Integrated Services Router delivering robust cloud-ready WAN capabilities, secure link connectivity, and internal network filtering layers.</p>
-                <table class="specs-table">
-                    <tr><td><strong>Quantity:</strong></td><td>25 units</td></tr>
-                    <tr><td><strong>Shipping From:</strong></td><td>Singapore</td></tr>
-                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$850 USD</td></tr>
-                </table>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Switch</span>
-                <h3>Catalyst 9300 Switch</h3>
-                <p class="project-desc">Premier stackable enterprise access switching component built for advanced IoT, secure smart spaces, and high-bandwidth deployment setups.</p>
-                <table class="specs-table">
-                    <tr><td><strong>Quantity:</strong></td><td>42 units</td></tr>
-                    <tr><td><strong>Shipping From:</strong></td><td>San Jose, USA</td></tr>
-                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$4,200 USD</td></tr>
-                </table>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Memory RAM</span>
-                <h3>Cisco 64GB DDR4 RAM</h3>
-                <p class="project-desc">Factory-sealed high-performance registered ECC DIMM enterprise memory component running at high clock speed variables.</p>
-                <table class="specs-table">
-                    <tr><td><strong>Quantity:</strong></td><td>120 units</td></tr>
-                    <tr><td><strong>Shipping From:</strong></td><td>Frankfurt, DE</td></tr>
-                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$195 USD</td></tr>
-                </table>
-            </div>
-
-            <div class="display-card">
-                <span class="badge">Edge Routing</span>
-                <h3>Cisco ASR 1001-X</h3>
-                <p class="project-desc">Aggregation services engine designed to control massive traffic flows and service integration logic at network provider borders.</p>
-                <table class="specs-table">
-                    <tr><td><strong>Quantity:</strong></td><td>6 units</td></tr>
-                    <tr><td><strong>Shipping From:</strong></td><td>Tokyo, JP</td></tr>
-                    <tr><td><strong>Avg Price:</strong></td><td class="price-text">$8,900 USD</td></tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section" id="projects">
-        <h2 class="section-title">Open Source Ecosystem</h2>
-        
-        <div class="section-grid">
-            <div class="display-card">
-                <div class="project-preview-img">
-                    <img src="Generator.png" alt="Checksum Generator">
+        <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شريكك التقني المتكامل لتطوير الأعمال والأجهزة</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        نحن شركة رائدة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وإدارة وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات (2022-2026).
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">+150</span>
+                            <span class="text-gray-400 text-sm">مشروع تقني منجز</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl">
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">99%</span>
+                            <span class="text-gray-400 text-sm">نسبة رضاء العملاء</span>
+                        </div>
+                    </div>
                 </div>
-                <span class="badge">Checksum Generator</span>
-                <h3>15-Digit Checksum Generator</h3>
-                <p class="project-desc">High-performance implementation of custom math validation algorithms. Perfect for checking system configurations, tracking numbers, or processing data strings reliably.</p>
-                <a href="https://github.com/MahmoudSharkawy/IMEIchecksum-generator" class="project-link">View Source Code ↗</a>
-            </div>
-
-            <div class="display-card">
-                <div class="project-preview-img">
-                    <img src="AURA.png" alt="AuraFix Suite">
+                <div class="glass-card p-8 rounded-3xl border-emerald-500/20 relative">
+                    <div class="absolute inset-0 bg-emerald-500/5 rounded-3xl blur-xl"></div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">رسالتنا التقنية</h3>
+                    <p class="text-gray-300 relative z-10 leading-relaxed">
+                        نجمع بين البرمجيات المتقدمة والبنية التحتية الصلبة للأجهزة لنقدم حلولاً تقنية متكاملة تتسم بالأمان، السرعة، وقابلية التوسع لدعم نمو أعمالك بلا توقف.
+                    </p>
                 </div>
-                <span class="badge">AuraFix Suite Core</span>
-                <h3>GSM Unlocking Network Services</h3>
-                <p class="project-desc">A structured PHP web application template designed to link up with remote GSM servers, handle phone unlock queries, and update device network profiles smoothly.</p>
-                <a href="https://github.com/GreenTechSoftware/AuraFix-Suite-Core" class="project-link">Explore Repository ↗</a>
+            </div>
+        </section>
+
+        <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا البرمجية</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً تقنية شاملة تلبي احتياجات شركتك من الألف إلى الياء.</p>
             </div>
 
-            <div class="display-card">
-                <div class="project-preview-img">
-                    <img src="SME.png" alt="School Management Engine">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🌐</div>
+                    <h3 class="text-2xl font-bold mb-3">تصميم وتطوير الويب</h3>
+                    <p class="text-gray-400 leading-relaxed">مواقع ومنصات إلكترونية احترافية، فائقة السرعة ومتجاوبة مع كافة الشاشات وأجهزة العرض.</p>
                 </div>
-                <span class="badge">SME School Management Engine</span>
-                <h3>School Management Engine</h3>
-                <p class="project-desc">A deep, modular database setup built for handling student sign-ups, managing grades, scheduling classes, and generating automated school performance reports.</p>
-                <a href="#" class="project-link">Clone Repository ↗</a>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📱</div>
+                    <h3 class="text-2xl font-bold mb-3">تطبيقات الهاتف المحمول</h3>
+                    <p class="text-gray-400 leading-relaxed">تطبيقات ذكية ومخصصة لأنظمة iOS و Android بأداء عالي وتجربة مستخدم سلسة وجذابة.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">☁️</div>
+                    <h3 class="text-2xl font-bold mb-3">قواعد البيانات والسحابة</h3>
+                    <p class="text-gray-400 leading-relaxed">بناء وإدارة قواعد بيانات آمنة (SQL & NoSQL) مع هندسة سحابية متقدمة لضمان سرعة واستمرارية البيانات.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="content-section" id="services">
-        <h2 class="section-title">Our Technical Offerings</h2>
-        
-        <div class="section-grid">
-            <div class="display-card">
-                <h3>For Individuals</h3>
-                <ul>
-                    <li>Personal portfolio designs & brand setups.</li>
-                    <li>Interactive digital resumes and profiles.</li>
-                    <li>Academic engineering & graduation tech consultancy.</li>
-                    <li>Direct architecture advising for solo developers.</li>
-                </ul>
+        <section id="hardware" class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">أنظمة المعلومات والبنية التحتية</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">إدارة، تجديد، وبيع وشراء <span class="text-emerald-400">الأجهزة والسيرفرات</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">نوفر أحدث أنظمة المعلومات وحلول إعادة تدوير وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات.</p>
             </div>
 
-            <div class="display-card">
-                <h3>For Enterprises</h3>
-                <ul>
-                    <li>Bespoke operational workflows (ERP & CRM).</li>
-                    <li>Integrated e-commerce storefront deployments.</li>
-                    <li>Cross-platform mobile apps (iOS & Android).</li>
-                    <li>Advanced cloud design & network updates.</li>
-                </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">💻</div>
+                    <h3 class="text-xl font-bold mb-2">أجهزة الكمبيوتر واللابتوب</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">شراء، بيع، وتجديد أجهزة الكمبيوتر المكتبية وأجهزة اللابتوب الاحترافية للشركات والأفراد بأعلى مواصفات وضمان.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">📟</div>
+                    <h3 class="text-xl font-bold mb-2">الأجهزة اللوحية (Tablets)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">توفر وتجديد الأجهزة اللوحية بمختلف الموديلات لتلبية احتياجات نقاط البيع والأعمال المتنقلة.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🖧</div>
+                    <h3 class="text-xl font-bold mb-2">السيرفرات والبنية التحتية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">بيع وتجديد سيرفرات الشركات القوية ومعدات الشبكات لضمان بيئة عمل رقمية مستقرة وعالية الأداء.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🔄</div>
+                    <h3 class="text-xl font-bold mb-2">أنظمة المعلومات والاستبدال</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تقديم استشارات متكاملة لأنظمة المعلومات وبرامج التقييم وإعادة شراء الأجهزة القديمة وتحديثها.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
+            <div class="glass-card p-10 md:p-16 rounded-3xl border-emerald-500/20 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">هل ترغب في تطوير نظامك أو شراء/تجديد أجهزتك؟</h2>
+                <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو منصات التواصل الاجتماعي لنبدأ فوراً.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        تواصل عبر فيسبوك
+                    </a>
+                    <a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="bg-[#0A66C2] hover:bg-[#095196] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        تواصل عبر لينكد إن
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-[#02040a] border-t border-emerald-500/10 pt-16 pb-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="text-xl font-black text-emerald-400 tracking-wider flex items-center gap-2 mb-4">
+                        <span>GreenTech Software</span>
+                        <span>🇪🇬</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-4 leading-relaxed">
+                        شركة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وتجديد وبيع وشراء الأجهزة والسيرفرات لتمكين الأعمال.
+                    </p>
+                    <div class="text-xs text-gray-500 space-y-1 mb-4">
+                        <p>📍 المقر: الجيزة، جمهورية مصر العربية 🇪🇬</p>
+                        <p>📋 السجل الضريبي (TAX ID): <span class="text-emerald-400 font-semibold">699-224-616</span></p>
+                        <p>⏳ سنة التأسيس والنشاط: 2022 - 2026</p>
+                    </div>
+                    
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all" title="Facebook">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all" title="LinkedIn">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">روابط سريعة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا البرمجية</a></li>
+                        <li><a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والسيرفرات</a></li>
+                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">الدعم والمساعدة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">استشارة تقنية مجانية</a></li>
+                        <li><a href="mailto:contact@greentech.software" class="hover:text-emerald-400 transition-colors">البريد الإلكتروني</a></li>
+                        <li><a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة الفيسبوك</a></li>
+                        <li><a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة لينكد إن</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="display-card">
-                <h3>For Education</h3>
-                <ul>
-                    <li>Custom modern Learning Management Systems (LMS).</li>
-                    <li>Unified school portals & core grading platforms.</li>
-                    <li>Virtual classrooms & integrated automated exams.</li>
-                    <li>Interactive utility structures for classes and groups.</li>
-                </ul>
+            <div class="max-w-7xl mx-auto pt-8 border-t border-emerald-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>جميع الحقوق محفوظة © 2022-2026 GreenTech Software. صُنع بكل إتقان في مصر</p>
+                <div class="flex gap-6">
+                    <span class="hover:text-emerald-400 cursor-pointer">سياسة الخصوصية</span>
+                    <span class="hover:text-emerald-400 cursor-pointer">الشروط والأحكام</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const container = document.getElementById('webgl-container');
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 8;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const geom1 = new THREE.IcosahedronGeometry(2.0, 1);
+        const mat1 = new THREE.MeshStandardMaterial({
+            color: 0x10b981,
+            wireframe: true,
+            roughness: 0.2,
+            metalness: 0.9
+        });
+        const mesh1 = new THREE.Mesh(geom1, mat1);
+        group.add(mesh1);
+
+        const geom2 = new THREE.OctahedronGeometry(3.2, 0);
+        const mat2 = new THREE.MeshStandardMaterial({
+            color: 0x059669,
+            wireframe: true,
+            roughness: 0.4,
+            metalness: 0.7,
+            transparent: true,
+            opacity: 0.5
+        });
+        const mesh2 = new THREE.Mesh(geom2, mat2);
+        group.add(mesh2);
+
+        const particlesCount = 200;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesPositions = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            particlesPositions[i] = (Math.random() - 0.5) * 20;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            color: 0x34d399,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.8
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+        const pointLight1 = new THREE.PointLight(0x34d399, 3);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x047857, 3);
+        pointLight2.position.set(-5, -5, -5);
+        scene.add(pointLight2);
+
+        let scrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            scrollY = window.scrollY;
+        });
+
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0005;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0005;
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            mesh1.rotation.x = elapsedTime * 0.2 + scrollY * 0.001 + mouseY;
+            mesh1.rotation.y = elapsedTime * 0.3 + scrollY * 0.0015 + mouseX;
+
+            mesh2.rotation.x = -elapsedTime * 0.15 - scrollY * 0.0008;
+            mesh2.rotation.y = -elapsedTime * 0.25 - scrollY * 0.0012;
+
+            particles.rotation.y = elapsedTime * 0.05;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
