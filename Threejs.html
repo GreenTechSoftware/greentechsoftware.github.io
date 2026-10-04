@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoPulse - GreenTech Software & IT</title>
-    <!-- Tailwind CSS لتنسيق الموقع بسرعة وأناقة -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -14,7 +14,7 @@
             font-family: system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
         }
-        /* خلفية Three.js لتكون ثابتة في الخلف */
+        /* خلفية Three.js */
         #webgl-container {
             position: fixed;
             top: 0;
@@ -24,16 +24,29 @@
             z-index: -1;
             pointer-events: none;
         }
+        /* تأثيرات الدائرة التفاعلية */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body class="selection:bg-emerald-500 selection:text-black">
 
-    <!-- حاوية عرض Three.js -->
+    <!-- حاوية عرض Three.js الخلفية -->
     <div id="webgl-container"></div>
 
     <!-- محتوى الصفحة -->
     <main class="relative z-10">
-        <!-- قسم الـ Hero (البداية) -->
+        
+        <!-- 1. قسم الـ Hero (البداية) -->
         <section class="h-screen flex flex-col justify-center items-center text-center px-4">
             <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50">
                 برمجيات مستدامة لجيل المستقبل
@@ -45,7 +58,7 @@
                 نبني أنظمة سحابية وبرمجيات ذكية تدمج قوة الذكاء الاصطناعي مع معايير الاستدامة البيئية لشركات الـ IT.
             </p>
             <div class="flex gap-4">
-                <a href="#features" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
+                <a href="#services" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
                     استكشف خدماتنا
                 </a>
                 <a href="#contact" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all">
@@ -54,33 +67,73 @@
             </div>
         </section>
 
-        <!-- قسم الميزات -->
-        <section id="features" class="py-24 px-6 max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">لماذا تختار <span class="text-emerald-400">EcoPulse</span>؟</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900/40 backdrop-blur-md p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">01</div>
-                    <h3 class="text-xl font-bold mb-2">خوادم خضراء صديقة للبيئة</h3>
-                    <p class="text-gray-400">تحسين كفاءة استهلاك الطاقة في مراكز البيانات وخفض الانبعاثات الكربونية بنجاح.</p>
-                </div>
-                <div class="bg-gray-900/40 backdrop-blur-md p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">02</div>
-                    <h3 class="text-xl font-bold mb-2">أكواد برمجية محسنة</h3>
-                    <p class="text-gray-400">هندسة برمجيات عالية الأداء تقلل من استهلاك المعالجات (CPU) والذاكرة لتقليل الطاقة.</p>
-                </div>
-                <div class="bg-gray-900/40 backdrop-blur-md p-8 rounded-2xl border border-emerald-500/10 hover:border-emerald-500/30 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">03</div>
-                    <h3 class="text-xl font-bold mb-2">تحليلات ذكية مستدامة</h3>
-                    <p class="text-gray-400">لوحات تحكم دقيقة لمراقبة بصمة شركتك التقنية واتخاذ قرارات فورية لتحسينها.</p>
-                </div>
+        <!-- 2. قسم القائمة المجسمة الدائرية للخدمات -->
+        <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا التخصصية</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً برمجية متكاملة مصممة خصيصاً لترقية البنية التحتية لشركتك بأعلى كفاءة وأقل استهلاك للطاقة.</p>
             </div>
+
+            <!-- شبكة الخدمات بتصميم دائري / شبكي تفاعلي مجسم -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- خدمة 1: تصميم وتطوير الويب -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🌐</div>
+                    <h3 class="text-2xl font-bold mb-3">تصميم وتطوير الويب</h3>
+                    <p class="text-gray-400 leading-relaxed">منصات ومواقع إلكترونية فائقة السرعة، متجاوبة، ومصممة بأحدث تقنيات الـ Frontend لتجربة مستخدم استثنائية.</p>
+                </div>
+
+                <!-- خدمة 2: تطبيقات الهاتف -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📱</div>
+                    <h3 class="text-2xl font-bold mb-3">تطبيقات الهاتف المحمول</h3>
+                    <p class="text-gray-400 leading-relaxed">تطبيقات ذكية لأنظمة iOS و Android بأداء عالي، واجهات عصرية، واستهلاك منخفض لموارد بطارية الأجهزة.</p>
+                </div>
+
+                <!-- خدمة 3: قواعد البيانات والسحابة -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">☁️</div>
+                    <h3 class="text-2xl font-bold mb-3">قواعد البيانات والسحابة</h3>
+                    <p class="text-gray-400 leading-relaxed">إدارة وبناء قواعد بيانات متقدمة (SQL & NoSQL) مع هندسة سحابية آمنة وموزعة لضمان استمرارية البيانات.</p>
+                </div>
+
+                <!-- خدمة 4: تجديد أنظمة المعلومات -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🔄</div>
+                    <h3 class="text-2xl font-bold mb-3">تجديد أنظمة المعلومات</h3>
+                    <p class="text-gray-400 leading-relaxed">تحديث الهياكل التقنية القديمة (Legacy Systems) ونقلها إلى أنظمة ذكية ومرنة تواكب المعايير الحديثة.</p>
+                </div>
+
+                <!-- خدمة 5: صيانة البرمجيات وتطويرها -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group lg:col-span-2">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-3">صيانة البرمجيات وتطويرها المستمر</h3>
+                    <p class="text-gray-400 leading-relaxed">مراقبة الأكواد، ترقية الحزم البرمجية، معالجة الثغرات، وتحسين الأداء الدوري لضمان عمل أنظمتك بكفاءة مستدامة دون توقف.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. قسم تواصل معنا -->
+        <section id="contact" class="py-20 text-center border-t border-emerald-500/10">
+            <h2 class="text-3xl font-bold mb-4">جاهز للبدء بمشروعك الأخضر القادم؟</h2>
+            <p class="text-gray-400 mb-8">تواصل معنا اليوم لنحول أفكارك إلى واقع تقني مستدام.</p>
+            <a href="mailto:contact@ecopulse.tech" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20 inline-block">
+                راسلنا الآن
+            </a>
         </section>
     </main>
 
-    <!-- تضمين مكتبة Three.js من CDN -->
+    <!-- مكتبة Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // إعداد مشهد Three.js الأساسي
+        // إعداد مشهد Three.js الخلفي المتحرك
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
@@ -92,18 +145,18 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
-        // إنشاء مجسم تقني ثلاثي الأبعاد (شكل هندسي يمثل الخادم أو تقنية خضراء)
-        const geometry = new THREE.IcosahedronGeometry(1.8, 1);
+        // بناء مجسم هندسي تقني (شبكي) يدور في الخلفية
+        const geometry = new THREE.IcosahedronGeometry(2.2, 1);
         const material = new THREE.MeshStandardMaterial({
-            color: 0x10b981, // لون أخضر زمردي
-            wireframe: true,  // يعطي طابع شبكي تقني سايبراني
+            color: 0x10b981,
+            wireframe: true,
             roughness: 0.3,
             metalness: 0.8
         });
         const techObject = new THREE.Mesh(geometry, material);
         scene.add(techObject);
 
-        // إضافة إضاءة للمشهد
+        // إضاءة المشهد
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
@@ -111,33 +164,27 @@
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
 
-        // تفاعل الحركة مع تمرير الصفحة (Scroll-sync)
+        // تفاعل حركة التمرير Scroll
         let scrollY = window.scrollY;
         window.addEventListener('scroll', () => {
             scrollY = window.scrollY;
         });
 
-        // حلقة الرسم والتحديث المستمر (Animation Loop)
+        // حلقة التحديث والرسم
         const clock = new THREE.Clock();
-
         function animate() {
             requestAnimationFrame(animate);
-
             const elapsedTime = clock.getElapsedTime();
 
-            // دوران مستمر للمجسم + تأثير التمرير
-            techObject.rotation.x = elapsedTime * 0.2 + scrollY * 0.002;
-            techObject.rotation.y = elapsedTime * 0.3 + scrollY * 0.003;
-
-            // حركة طفو خفيفة للأعلى والأسفل
-            techObject.position.y = Math.sin(elapsedTime * 1.5) * 0.2;
+            techObject.rotation.x = elapsedTime * 0.15 + scrollY * 0.001;
+            techObject.rotation.y = elapsedTime * 0.2 + scrollY * 0.0015;
+            techObject.position.y = Math.sin(elapsedTime * 1) * 0.15;
 
             renderer.render(scene, camera);
         }
-
         animate();
 
-        // التجاوب مع تغيير حجم الشاشة
+        // التجاوب مع الشاشات
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
