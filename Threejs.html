@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexCode - Software & IT Systems</title>
+    <title>GreenTech Software - Software & IT Systems</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             margin: 0;
-            background-color: #07090e;
+            background-color: #030712;
             color: #f3f4f6;
             font-family: system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
         }
-        /* خلفية Three.js */
+        /* خلفية Three.js باللون الأخضر التقني */
         #webgl-container {
             position: fixed;
             top: 0;
@@ -24,21 +24,21 @@
             z-index: -1;
             pointer-events: none;
         }
-        /* تأثيرات البطاقات */
+        /* تأثيرات البطاقات الزجاجية الخضراء */
         .glass-card {
-            background: rgba(17, 24, 39, 0.65);
+            background: rgba(6, 78, 59, 0.25);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.2);
             transition: all 0.4s ease;
         }
         .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.6);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
             transform: translateY(-5px);
         }
     </style>
 </head>
-<body class="selection:bg-blue-500 selection:text-black">
+<body class="selection:bg-emerald-500 selection:text-black">
 
     <!-- حاوية عرض Three.js الخلفية -->
     <div id="webgl-container"></div>
@@ -47,16 +47,19 @@
     <main class="relative z-10">
         
         <!-- شريط التنقل العلوي -->
-        <header class="fixed top-0 left-0 right-0 z-50 bg-[#07090e]/80 backdrop-blur-md border-b border-blue-500/10">
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-emerald-500/10">
             <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-                <a href="#" class="text-2xl font-black text-blue-400 tracking-wider">NexCode</a>
+                <a href="#" class="text-xl md:text-2xl font-black text-emerald-400 tracking-wider flex items-center gap-2">
+                    <span>GreenTech Software</span>
+                    <span class="text-lg" title="مصر - الجيزة">🇪🇬</span>
+                </a>
                 <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-                    <a href="#about" class="hover:text-blue-400 transition-colors">عن الشركة</a>
-                    <a href="#services" class="hover:text-blue-400 transition-colors">خدماتنا</a>
-                    <a href="#ideas" class="hover:text-blue-400 transition-colors">أفكار التحول الرقمي</a>
-                    <a href="#contact" class="hover:text-blue-400 transition-colors">تواصل معنا</a>
+                    <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
+                    <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
+                    <a href="#coffee-3d" class="hover:text-emerald-400 transition-colors">عروض 3D لمحل القهوة</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
                 </nav>
-                <a href="#contact" class="bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-blue-500/30 transition-all">
+                <a href="#contact" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-emerald-500/35 transition-all">
                     احصل على استشارة
                 </a>
             </div>
@@ -64,20 +67,20 @@
 
         <!-- 1. قسم الـ Hero (البداية) -->
         <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
-            <span class="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-blue-950/60 px-4 py-1.5 rounded-full border border-blue-800/50">
-                حلول برمجية متكاملة لشركات المستقبل
+            <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50 flex items-center gap-2">
+                <span>🇪🇬 الجيزة، مصر | حلول برمجية مستدامة ومتقدمة</span>
             </span>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mb-6 leading-tight">
-                نبني أنظمتك الرقمية <br>بأعلى <span class="text-blue-400">كفاءة واحترافية</span>
+                نبني أنظمتك الرقمية <br>بأعلى <span class="text-emerald-400">كفاءة واحترافية</span>
             </h1>
             <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-8">
                 نحول أفكارك التجارية إلى تطبيقات ومنصات ذكية تضاعف أرباحك وتمنح عملائك تجربة استثنائية.
             </p>
             <div class="flex gap-4">
-                <a href="#services" class="bg-blue-500 hover:bg-blue-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                <a href="#services" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
                     استكشف خدماتنا
                 </a>
-                <a href="#contact" class="border border-blue-500/30 hover:border-blue-400 text-blue-400 px-8 py-3.5 rounded-xl transition-all">
+                <a href="#contact" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all">
                     تواصل معنا
                 </a>
             </div>
@@ -87,24 +90,24 @@
         <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
+                    <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
                     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شريكك التقني الموثوق لتطوير الأعمال</h2>
                     <p class="text-gray-400 leading-relaxed mb-6">
-                        نحن شركة رائدة متخصصة في هندسة وتطوير الأنظمة البرمجية وتطبيقات الويب والهواتف الذكية. نساعد الشركات والمشاريع على اختلاف أحجامها في دخول عالم التحول الرقمي بقوة وثبات.
+                        نحن شركة رائدة متخصصة في هندسة وتطوير الأنظمة البرمجية وتطبيقات الويب والهواتف الذكية من قلب الجيزة بمصر (2022-2026). نساعد الشركات والمشاريع على دخول عالم التحول الرقمي بقوة وثبات.
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-center">
                         <div class="glass-card p-4 rounded-2xl">
-                            <span class="block text-3xl font-bold text-blue-400 mb-1">+150</span>
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">+150</span>
                             <span class="text-gray-400 text-sm">مشروع تقني منجز</span>
                         </div>
                         <div class="glass-card p-4 rounded-2xl">
-                            <span class="block text-3xl font-bold text-blue-400 mb-1">99%</span>
+                            <span class="block text-3xl font-bold text-emerald-400 mb-1">99%</span>
                             <span class="text-gray-400 text-sm">نسبة رضاء العملاء</span>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl border-blue-500/20 relative">
-                    <div class="absolute inset-0 bg-blue-500/5 rounded-3xl blur-xl"></div>
+                <div class="glass-card p-8 rounded-3xl border-emerald-500/20 relative">
+                    <div class="absolute inset-0 bg-emerald-500/5 rounded-3xl blur-xl"></div>
                     <h3 class="text-2xl font-bold mb-4 relative z-10">رسالتنا التقنية</h3>
                     <p class="text-gray-300 relative z-10 leading-relaxed">
                         نؤمن بأن البرمجيات القوية هي عصب أي تجارة ناجحة. نقدم حلولاً برمجية مبتكرة تتسم بالأمان، السرعة، وقابلية التوسع لضمان نمو أعمالك بلا توقف.
@@ -116,93 +119,93 @@
         <!-- 3. قسم خدماتنا التخصصية -->
         <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-blue-400">خدماتنا البرمجية</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا البرمجية</span></h2>
                 <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً تقنية شاملة تلبي احتياجات شركتك من الألف إلى الياء.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- خدمة 1 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 border border-blue-500/20">🌐</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🌐</div>
                     <h3 class="text-2xl font-bold mb-3">تصميم وتطوير الويب</h3>
                     <p class="text-gray-400 leading-relaxed">مواقع ومنصات إلكترونية احترافية، فائقة السرعة ومتجاوبة مع كافة الشاشات وأجهزة العرض.</p>
                 </div>
 
                 <!-- خدمة 2 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 border border-blue-500/20">📱</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📱</div>
                     <h3 class="text-2xl font-bold mb-3">تطبيقات الهاتف المحمول</h3>
                     <p class="text-gray-400 leading-relaxed">تطبيقات ذكية ومخصصة لأنظمة iOS و Android بأداء عالي وتجربة مستخدم سلسة وجذابة.</p>
                 </div>
 
                 <!-- خدمة 3 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 border border-blue-500/20">☁️</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">☁️</div>
                     <h3 class="text-2xl font-bold mb-3">قواعد البيانات والسحابة</h3>
                     <p class="text-gray-400 leading-relaxed">بناء وإدارة قواعد بيانات آمنة (SQL & NoSQL) مع هندسة سحابية متقدمة لضمان سرعة واستمرارية البيانات.</p>
                 </div>
 
                 <!-- خدمة 4 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 border border-blue-500/20">📊</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📊</div>
                     <h3 class="text-2xl font-bold mb-3">أنظمة المعلومات والإدارة</h3>
                     <p class="text-gray-400 leading-relaxed">أنظمة مخصصة لإدارة موارد المؤسسات، تتبع المبيعات، وتنظيم العمليات الداخلية بدقة عالية.</p>
                 </div>
 
                 <!-- خدمة 5 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group lg:col-span-2">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 border border-blue-500/20">⚙️</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">⚙️</div>
                     <h3 class="text-2xl font-bold mb-3">صيانة البرمجيات وتطويرها</h3>
                     <p class="text-gray-400 leading-relaxed">دعم فني مستمر، تحديثات دورية، معالجة الثغرات، وإضافة ميزات جديدة لأنظمتك القائمة لضمان استمرار عملها بكفاءة مطلقة.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 4. قسم أفكار التحول الرقمي لجذب العملاء (الأفكار المطلوبة) -->
-        <section id="ideas" class="py-32 px-6 max-w-7xl mx-auto">
+        <!-- 4. قسم عروض 3D لمواقع تخيلية لمشروع محل القهوة -->
+        <section id="coffee-3d" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">ابتكار وتطوير الأعمال</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">كيف يغير <span class="text-blue-400">التحول الرقمي</span> مشروعك؟</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">أمثلة عملية وقصص نجاح تلهمك لنقل مشروعك التقليدي إلى آفاق رقمية غير محدودة.</p>
+                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">تجربة تفاعلية متقدمة</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">عروض <span class="text-emerald-400">3D تخيلية</span> لمحل القهوة</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">كيف ندمج تقنيات الـ 3D التفاعلية داخل منصة محل القهوة لجذب العملاء ومضاعفة التفاعل؟</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- فكرة 1: محل القهوة وتطبيق الهاتف -->
-                <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-xl font-bold mb-6 border border-blue-500/20">☕</div>
-                    <h3 class="text-2xl font-bold mb-3">قوة تطبيقات الهاتف: قصة "محل القهوة"</h3>
+                <!-- عرض 3D التخيلي الأول -->
+                <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden border-emerald-500/30">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-6 border border-emerald-500/20">☕</div>
+                    <h3 class="text-2xl font-bold mb-3">قائمة المشروبات 3D التفاعلية</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
-                        تخيل أن زبائنك يمكنهم الطلب مسبقاً والدفع أونلاين عبر تطبيق خاص بمحلك، مما يلغي تماماً طوابير الانتظار الطويلة. 
+                        نموذج تخيلي لموقع يتيح للعميل تصفح مجسم ثلاثي الأبعاد لكأس القهوة المفضل، اختيار درجات التحميص، ونوع الحليب، ورؤية تفاصيل الطلب بشكل بصري مذهل قبل تأكيد الشراء.
                     </p>
                     <ul class="text-gray-400 text-sm space-y-2 mb-6">
-                        <li class="flex items-center gap-2">✓ **نظام نقاط الولاء:** يمنح العملاء نقاط مجانية على كل طلب لضمان عودتهم المستمرة.</li>
-                        <li class="flex items-center gap-2">✓ **خدمات تسوق وتوصيل البن:** فتح سوق جديد لبيع وتوصيل أكياس البن الخاصة بمحلك لمنازل العملاء أسبوعياً.</li>
+                        <li class="flex items-center gap-2">✓ عرض تفاعلي 360 درجة للمنتجات</li>
+                        <li class="flex items-center gap-2">✓ الطلب المباشر والدفع الإلكتروني السريع</li>
                     </ul>
-                    <span class="text-blue-400 text-xs font-semibold uppercase tracking-widest bg-blue-950/60 px-3 py-1 rounded-md border border-blue-800/40">نتيجة: مضاعفة المبيعات وكسب ولاء الزبائن</span>
+                    <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest bg-emerald-950/60 px-3 py-1 rounded-md border border-emerald-800/40">تأثير بصري يحفز قرار الشراء الفوري</span>
                 </div>
 
-                <!-- فكرة 2: صيانة الأجهزة المنزلية ومواقع الثري دي -->
-                <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-xl font-bold mb-6 border border-blue-500/20">🧊</div>
-                    <h3 class="text-2xl font-bold mb-3">سحر مواقع 3D: مشروع "صيانة الأجهزة المنزلية"</h3>
+                <!-- عرض 3D التخيلي الثاني -->
+                <div class="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden border-emerald-500/30">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-6 border border-emerald-500/20">🛍️</div>
+                    <h3 class="text-2xl font-bold mb-3">ركن متجر البن وملحقاته (3D Showroom)</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
-                        كيف تحول ورشة صيانة تقليدية إلى مشروع رقمي مربح جداً؟ من خلال موقع ويب بتقنية ثلاثية الأبعاد (3D Interactive).
+                        معرض افتراضي ثلاثي الأبعاد داخل متجر القهوة يعرض أكياس حبوب البن الفاخرة، ماكينات الإسبريسو، والأدوات المنزلية، مع إمكانية معاينة حجم المنتج الحقيقي في مساحة العميل الافتراضية.
                     </p>
                     <ul class="text-gray-400 text-sm space-y-2 mb-6">
-                        <li class="flex items-center gap-2">✓ **استكشاف الأعطال تفاعلياً:** عرض مجسم 3D تفاعلي للثلاجة أو الغسالة يتيح للعميل تحديد القطعة التالفة بضغطة زر.</li>
-                        <li class="flex items-center gap-2">✓ **حجز الفني أونلاين:** جدولة مواعيد الصيانة الفورية وطلب قطع الغيار بأسلوب بصري مذهل يمنح انطباعاً بالفخامة والثقة المطلقة.</li>
+                        <li class="flex items-center gap-2">✓ تفعيل نقاط الولاء والهدايا المجانية مباشرة</li>
+                        <li class="flex items-center gap-2">✓ تجربة تسوق استثنائية ترفع معدل المبيعات بنسبة 40%</li>
                     </ul>
-                    <span class="text-blue-400 text-xs font-semibold uppercase tracking-widest bg-blue-950/60 px-3 py-1 rounded-md border border-blue-800/40">نتيجة: رفع ثقة العميل وتحقيق أرباح استثنائية</span>
+                    <span class="text-emerald-400 text-xs font-semibold uppercase tracking-widest bg-emerald-950/60 px-3 py-1 rounded-md border border-emerald-800/40">تجربة تسوق فريدة ومربحة</span>
                 </div>
             </div>
         </section>
 
         <!-- 5. قسم تواصل معنا (Contact & Facebook) -->
         <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
-            <div class="glass-card p-10 md:p-16 rounded-3xl border-blue-500/20 relative overflow-hidden">
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="glass-card p-10 md:p-16 rounded-3xl border-emerald-500/20 relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
                 
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">هل لديك فكرة مشروع وتود تحويلها لواقع؟</h2>
                 <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو صفحتنا الرسمية على فيسبوك لنبدأ في تصميم وتطوير نظامك البرمجي.</p>
@@ -214,23 +217,65 @@
                         تواصل عبر فيسبوك
                     </a>
                     <!-- زر البريد الإلكتروني -->
-                    <a href="mailto:contact@nexcode.tech" class="bg-blue-500 hover:bg-blue-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-blue-500/20">
+                    <a href="mailto:contact@greentech.software" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
                         راسلنا بالبريد الإلكتروني
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- حقوق النشر -->
-        <footer class="py-8 text-center text-gray-500 text-sm border-t border-blue-500/10">
-            جميع الحقوق محفوظة © 2026 NexCode Software Systems.
+        <!-- الفووتر القوي والمحترف -->
+        <footer class="bg-[#02040a] border-t border-emerald-500/10 pt-16 pb-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="text-xl font-black text-emerald-400 tracking-wider flex items-center gap-2 mb-4">
+                        <span>GreenTech Software</span>
+                        <span>🇪🇬</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-4 leading-relaxed">
+                        شركة متخصصة في هندسة البرمجيات وتطوير الأنظمة الرقمية المتقدمة لتمكين الشركات من النجاح في العصر الرقمي.
+                    </p>
+                    <div class="text-xs text-gray-500 space-y-1">
+                        <p>📍 المقر: الجيزة، جمهورية مصر العربية</p>
+                        <p>📋 السجل الضريبي (TAX ID): <span class="text-emerald-400 font-semibold">699-224-616</span></p>
+                        <p>⏳ سنة التأسيس والنشاط: 2022 - 2026</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">روابط سريعة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا البرمجية</a></li>
+                        <li><a href="#coffee-3d" class="hover:text-emerald-400 transition-colors">عروض 3D للقهوة</a></li>
+                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">الدعم والمساعدة</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">استشارة تقنية مجانية</a></li>
+                        <li><a href="mailto:contact@greentech.software" class="hover:text-emerald-400 transition-colors">البريد الإلكتروني</a></li>
+                        <li><a href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة الفيسبوك</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto pt-8 border-t border-emerald-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>جميع الحقوق محفوظة © 2022-2026 GreenTech Software. صُنع بكل إتقان في مصر 🇪🇬</p>
+                <div class="flex gap-6">
+                    <span class="hover:text-emerald-400 cursor-pointer">سياسة الخصوصية</span>
+                    <span class="hover:text-emerald-400 cursor-pointer">الشروط والأحكام</span>
+                </div>
+            </div>
         </footer>
     </main>
 
     <!-- مكتبة Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // إعداد مشهد Three.js الخلفي المتحرك (بلون تقني أزرق)
+        // إعداد مشهد Three.js الخلفي المتحرك (بلون أخضر تقني)
         const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
 
@@ -242,10 +287,10 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
-        // بناء مجسم هندسي تقني (شبكي) باللون الأزرق التقني في الخلفية
+        // بناء مجسم هندسي تقني باللون الأخضر في الخلفية
         const geometry = new THREE.IcosahedronGeometry(2.2, 1);
         const material = new THREE.MeshStandardMaterial({
-            color: 0x3b82f6,
+            color: 0x10b981,
             wireframe: true,
             roughness: 0.3,
             metalness: 0.8
@@ -257,7 +302,7 @@
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0x60a5fa, 2);
+        const pointLight = new THREE.PointLight(0x34d399, 2);
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
 
