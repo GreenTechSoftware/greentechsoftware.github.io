@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenTech Software - Software & IT Systems</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -14,7 +13,6 @@
             font-family: system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
         }
-        /* خلفية Three.js العامة للخلفية */
         #webgl-container {
             position: fixed;
             top: 0;
@@ -24,17 +22,6 @@
             z-index: -1;
             pointer-events: none;
         }
-        /* حاوية عرض مجسم الـ 3D التفاعلي للزائر */
-        .canvas-3d-box {
-            width: 100%;
-            height: 350px;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            background: rgba(3, 7, 18, 0.6);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            position: relative;
-        }
-        /* تأثيرات البطاقات الزجاجية الخضراء */
         .glass-card {
             background: rgba(6, 78, 59, 0.25);
             backdrop-filter: blur(12px);
@@ -50,23 +37,20 @@
 </head>
 <body class="selection:bg-emerald-500 selection:text-black">
 
-    <!-- خلفية الموقع المتحركة -->
     <div id="webgl-container"></div>
 
-    <!-- محتوى الصفحة -->
     <main class="relative z-10">
         
-        <!-- شريط التنقل العلوي -->
         <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-emerald-500/10">
             <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                 <a href="#" class="text-xl md:text-2xl font-black text-emerald-400 tracking-wider flex items-center gap-2">
                     <span>GreenTech Software</span>
-                    <span class="text-lg" title="مصر - الجيزة">🇪🇬</span>
+                    <span class="text-lg">🇪🇬</span>
                 </a>
                 <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
                     <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
                     <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
-                    <a href="#coffee-3d" class="hover:text-emerald-400 transition-colors">تصميمات 3D للقهوة</a>
+                    <a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والتجديد</a>
                     <a href="#facebook-section" class="hover:text-emerald-400 transition-colors">مجتمعنا</a>
                     <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
                 </nav>
@@ -76,35 +60,33 @@
             </div>
         </header>
 
-        <!-- 1. قسم الـ Hero (البداية) -->
         <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
             <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50 flex items-center gap-2">
-                <span>🇪🇬 الجيزة، مصر | حلول برمجية مستدامة ومتقدمة</span>
+                <span>حلول برمجية مستدامة وتجديد الأجهزة</span>
             </span>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mb-6 leading-tight">
-                نبني أنظمتك الرقمية <br>بأعلى <span class="text-emerald-400">كفاءة واحترافية</span>
+                نبني أنظمتك الرقمية ونوفر <br>أفضل <span class="text-emerald-400">حلول الأجهزة والتجديد</span>
             </h1>
             <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-8">
-                نحول أفكارك التجارية إلى تطبيقات ومنصات ذكية تضاعف أرباحك وتمنح عملائك تجربة استثنائية.
+                نحول أفكارك إلى منصات ذكية ونقدم أنظمة معلومات متكاملة مع تجديد وبيع وشراء أجهزة الكمبيوتر والسيرفرات بكفاءة عالية.
             </p>
             <div class="flex gap-4">
                 <a href="#services" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
                     استكشف خدماتنا
                 </a>
-                <a href="#facebook-section" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all flex items-center gap-2">
-                    <span>تابعنا على فيسبوك</span>
+                <a href="#hardware" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                    <span>أنظمة الأجهزة والسيرفرات</span>
                 </a>
             </div>
         </section>
 
-        <!-- 2. قسم عن الشركة (About Us) -->
         <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شريكك التقني الموثوق لتطوير الأعمال</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شريكك التقني المتكامل لتطوير الأعمال والأجهزة</h2>
                     <p class="text-gray-400 leading-relaxed mb-6">
-                        نحن شركة رائدة متخصصة في هندسة وتطوير الأنظمة البرمجية وتطبيقات الويب والهواتف الذكية من قلب الجيزة بمصر (2022-2026). نساعد الشركات والمشاريع على دخول عالم التحول الرقمي بقوة وثبات.
+                        نحن شركة رائدة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وإدارة وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات (2022-2026).
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-center">
                         <div class="glass-card p-4 rounded-2xl">
@@ -121,13 +103,12 @@
                     <div class="absolute inset-0 bg-emerald-500/5 rounded-3xl blur-xl"></div>
                     <h3 class="text-2xl font-bold mb-4 relative z-10">رسالتنا التقنية</h3>
                     <p class="text-gray-300 relative z-10 leading-relaxed">
-                        نؤمن بأن البرمجيات القوية هي عصب أي تجارة ناجحة. نقدم حلولاً برمجية مبتكرة تتسم بالأمان، السرعة، وقابلية التوسع لضمان نمو أعمالك بلا توقف.
+                        نجمع بين البرمجيات المتقدمة والبنية التحتية الصلبة للأجهزة لنقدم حلولاً تقنية متكاملة تتسم بالأمان، السرعة، وقابلية التوسع لدعم نمو أعمالك بلا توقف.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. قسم خدماتنا التخصصية -->
         <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا البرمجية</span></h2>
@@ -153,40 +134,40 @@
             </div>
         </section>
 
-        <!-- 4. قسم عرض تصميمات الـ 3D التفاعلية للزائر (Interactive 3D Models Showcase) -->
-        <section id="coffee-3d" class="py-32 px-6 max-w-7xl mx-auto">
+        <section id="hardware" class="py-32 px-6 max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">معرض النماذج الحية</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">تصميمات <span class="text-emerald-400">3D تفاعلية</span> للرؤية والمعاينة</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">شاهد النماذج ثلاثية الأبعاد التي نصممها ونبرمجها خصيصاً للمتاجر والمنصات (يمكنك تحريكها والتفاعل معها بـ الماوس).</p>
+                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">أنظمة المعلومات والبنية التحتية</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">إدارة، تجديد، وبيع وشراء <span class="text-emerald-400">الأجهزة والسيرفرات</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">نوفر أحدث أنظمة المعلومات وحلول إعادة تدوير وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- النموذج الأول: مجسم كوب القهوة ثلاثي الأبعاد -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <h3 class="text-xl font-bold mb-3 text-emerald-400 flex items-center gap-2">
-                        <span>☕</span> نموذج مجسم القهوة ثلاثي الأبعاد (Coffee Cup 3D)
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-4">نموذج حي يتم عرضه للعملاء داخل متاجر الكافيهات لمعاينة المنتج من جميع الزوايا.</p>
-                    
-                    <!-- حاوية عرض الـ 3D الأولى -->
-                    <div id="canvas-coffee" class="canvas-3d-box"></div>
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">💻</div>
+                    <h3 class="text-xl font-bold mb-2">أجهزة الكمبيوتر واللابتوب</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">شراء، بيع، وتجديد أجهزة الكمبيوتر المكتبية وأجهزة اللابتوب الاحترافية للشركات والأفراد بأعلى مواصفات وضمان.</p>
                 </div>
 
-                <!-- النموذج الثاني: مجسم عبوة البن / العلبة ثلاثية الأبعاد -->
                 <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <h3 class="text-xl font-bold mb-3 text-emerald-400 flex items-center gap-2">
-                        <span>📦</span> نموذج عبوة البن الفاخرة ثلاثية الأبعاد (Coffee Package 3D)
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-4">مجسم تفاعلي يعرض علب ومنتجات المتجر بشكل هندسي مذهل يجذب انتباه الزوار.</p>
-                    
-                    <!-- حاوية عرض الـ 3D الثانية -->
-                    <div id="canvas-package" class="canvas-3d-box"></div>
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">📟</div>
+                    <h3 class="text-xl font-bold mb-2">الأجهزة اللوحية (Tablets)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">توفر وتجديد الأجهزة اللوحية بمختلف الموديلات لتلبية احتياجات نقاط البيع والأعمال المتنقلة.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🖧</div>
+                    <h3 class="text-xl font-bold mb-2">السيرفرات والبنية التحتية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">بيع وتجديد سيرفرات الشركات القوية ومعدات الشبكات لضمان بيئة عمل رقمية مستقرة وعالية الأداء.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🔄</div>
+                    <h3 class="text-xl font-bold mb-2">أنظمة المعلومات والاستبدال</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تقديم استشارات متكاملة لأنظمة المعلومات وبرامج التقييم وإعادة شراء الأجهزة القديمة وتحديثها.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 5. قسم صفحة الفيسبوك (Facebook Integration & Like/Follow) بالرابط الصحيح -->
         <section id="facebook-section" class="py-24 px-6 max-w-5xl mx-auto">
             <div class="glass-card p-8 md:p-12 rounded-3xl border-emerald-500/30 text-center relative overflow-hidden">
                 <div class="absolute -top-20 -left-20 w-52 h-52 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -196,10 +177,9 @@
                 </div>
 
                 <h3 class="text-2xl md:text-3xl font-bold mb-3">انضم إلى مجتمعنا التقني على فيسبوك</h3>
-                <p class="text-gray-400 max-w-lg mx-auto mb-8">تابع أحدث أعمالنا، نصائح البرمجة، وعروضنا الحصرية مباشرة عبر صفحتنا الرسمية.</p>
+                <p class="text-gray-400 max-w-lg mx-auto mb-8">تابع أحدث أعمالنا، عروض تجديد الأجهزة، وعروضنا الحصرية مباشرة عبر صفحتنا الرسمية.</p>
 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <!-- زر اللايك أو المتابعة المباشر لرابط الفيسبوك الصحيح -->
                     <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg flex items-center gap-3">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                         إعجاب (Like) & متابعة (Follow)
@@ -211,13 +191,12 @@
             </div>
         </section>
 
-        <!-- 6. قسم تواصل معنا (Contact) بالرابط الصحيح -->
         <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
             <div class="glass-card p-10 md:p-16 rounded-3xl border-emerald-500/20 relative overflow-hidden">
                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
                 
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">هل لديك فكرة مشروع وتود تحويلها لواقع؟</h2>
-                <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو صفحتنا الرسمية على فيسبوك لنبدأ في تصميم وتطوير نظامك البرمجي.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">هل ترغب في تطوير نظامك أو شراء/تجديد أجهزتك؟</h2>
+                <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو صفحتنا الرسمية على فيسبوك لنبدأ فوراً.</p>
                 
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
@@ -231,7 +210,6 @@
             </div>
         </section>
 
-        <!-- الفووتر القوي والمحترف -->
         <footer class="bg-[#02040a] border-t border-emerald-500/10 pt-16 pb-12 px-6">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 <div class="md:col-span-2">
@@ -240,7 +218,7 @@
                         <span>🇪🇬</span>
                     </div>
                     <p class="text-gray-400 text-sm max-w-sm mb-4 leading-relaxed">
-                        شركة متخصصة في هندسة البرمجيات وتطوير الأنظمة الرقمية المتقدمة لتمكين الشركات من النجاح في العصر الرقمي.
+                        شركة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وتجديد وبيع وشراء الأجهزة والسيرفرات لتمكين الأعمال.
                     </p>
                     <div class="text-xs text-gray-500 space-y-1">
                         <p>📍 المقر: الجيزة، جمهورية مصر العربية 🇪🇬</p>
@@ -254,7 +232,7 @@
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a></li>
                         <li><a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا البرمجية</a></li>
-                        <li><a href="#coffee-3d" class="hover:text-emerald-400 transition-colors">تصميمات 3D</a></li>
+                        <li><a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والسيرفرات</a></li>
                         <li><a href="#facebook-section" class="hover:text-emerald-400 transition-colors">مجتمع الفيسبوك</a></li>
                         <li><a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a></li>
                     </ul>
@@ -265,13 +243,13 @@
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#contact" class="hover:text-emerald-400 transition-colors">استشارة تقنية مجانية</a></li>
                         <li><a href="mailto:contact@greentech.software" class="hover:text-emerald-400 transition-colors">البريد الإلكتروني</a></li>
-                        <li><a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة الفيسبوك 🇪🇬</a></li>
+                        <li><a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة الفيسبوك</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="max-w-7xl mx-auto pt-8 border-t border-emerald-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-                <p>جميع الحقوق محفوظة © 2022-2026 GreenTech Software. صُنع بكل إتقان في مصر 🇪🇬</p>
+                <p>جميع الحقوق محفوظة © 2022-2026 GreenTech Software. صُنع بكل إتقان في مصر</p>
                 <div class="flex gap-6">
                     <span class="hover:text-emerald-400 cursor-pointer">سياسة الخصوصية</span>
                     <span class="hover:text-emerald-400 cursor-pointer">الشروط والأحكام</span>
@@ -280,108 +258,104 @@
         </footer>
     </main>
 
-    <!-- مكتبة Three.js لعرض النماذج التفاعلية -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // 1. إعداد الخلفية المتحركة العامة للموقع
-        const bgContainer = document.getElementById('webgl-container');
-        const bgScene = new THREE.Scene();
-        const bgCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        bgCamera.position.z = 5;
-        const bgRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        bgRenderer.setSize(window.innerWidth, window.innerHeight);
-        bgRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        bgContainer.appendChild(bgRenderer.domElement);
+        const container = document.getElementById('webgl-container');
+        const scene = new THREE.Scene();
 
-        const bgGeo = new THREE.IcosahedronGeometry(2.2, 1);
-        const bgMat = new THREE.MeshStandardMaterial({ color: 0x10b981, wireframe: true, roughness: 0.3, metalness: 0.8 });
-        const bgMesh = new THREE.Mesh(bgGeo, bgMat);
-        bgScene.add(bgMesh);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 8;
 
-        bgScene.add(new THREE.AmbientLight(0xffffff, 0.5));
-        const bgLight = new THREE.PointLight(0x34d399, 2);
-        bgLight.position.set(5, 5, 5);
-        bgScene.add(bgLight);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const geom1 = new THREE.IcosahedronGeometry(2.0, 1);
+        const mat1 = new THREE.MeshStandardMaterial({
+            color: 0x10b981,
+            wireframe: true,
+            roughness: 0.2,
+            metalness: 0.9
+        });
+        const mesh1 = new THREE.Mesh(geom1, mat1);
+        group.add(mesh1);
+
+        const geom2 = new THREE.OctahedronGeometry(3.2, 0);
+        const mat2 = new THREE.MeshStandardMaterial({
+            color: 0x059669,
+            wireframe: true,
+            roughness: 0.4,
+            metalness: 0.7,
+            transparent: true,
+            opacity: 0.5
+        });
+        const mesh2 = new THREE.Mesh(geom2, mat2);
+        group.add(mesh2);
+
+        const particlesCount = 200;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesPositions = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            particlesPositions[i] = (Math.random() - 0.5) * 20;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            color: 0x34d399,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.8
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+        const pointLight1 = new THREE.PointLight(0x34d399, 3);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x047857, 3);
+        pointLight2.position.set(-5, -5, -5);
+        scene.add(pointLight2);
 
         let scrollY = window.scrollY;
-        window.addEventListener('scroll', () => { scrollY = window.scrollY; });
-
-
-        // 2. دالة لإنشاء وعرض نموذج 3D تفاعلي داخل أي عنصر HTML محدد
-        function initInteractive3D(elementId, geometryType, colorHex) {
-            const el = document.getElementById(elementId);
-            if (!el) return;
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(50, el.clientWidth / el.clientHeight, 0.1, 1000);
-            camera.position.z = 4;
-
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            renderer.setSize(el.clientWidth, el.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            el.appendChild(renderer.domElement);
-
-            let mesh;
-            if (geometryType === 'cylinder') {
-                // مجسم يشبه الكوب أو الاسطوانة
-                const geo = new THREE.CylinderGeometry(0.8, 0.6, 2, 32);
-                const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.2, metalness: 0.5, wireframe: false });
-                mesh = new THREE.Mesh(geo, mat);
-            } else {
-                // مجسم صندوقي يشبه العبوة
-                const geo = new THREE.BoxGeometry(1.2, 1.6, 1.2);
-                const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.3, metalness: 0.6, wireframe: false });
-                mesh = new THREE.Mesh(geo, mat);
-            }
-            scene.add(mesh);
-
-            // إضاءة المجسم التفاعلي
-            scene.add(new THREE.AmbientLight(0xffffff, 0.8));
-            const pLight = new THREE.PointLight(0x10b981, 3);
-            pLight.position.set(3, 3, 3);
-            scene.add(pLight);
-
-            // تفاعل الحركة التلقائية ودوران الماوس البسيط
-            function animateModel() {
-                requestAnimationFrame(animateModel);
-                mesh.rotation.x += 0.008;
-                mesh.rotation.y += 0.012;
-                renderer.render(scene, camera);
-            }
-            animateModel();
-
-            // ضبط المقاسات عند تغيير حجم الشاشة
-            window.addEventListener('resize', () => {
-                if(el.clientWidth > 0) {
-                    camera.aspect = el.clientWidth / el.clientHeight;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(el.clientWidth, el.clientHeight);
-                }
-            });
-        }
-
-        // تشغيل النماذج التفاعلية الثلاثية الأبعاد داخل الأقسام المخصصة
-        window.addEventListener('DOMContentLoaded', () => {
-            initInteractive3D('canvas-coffee', 'cylinder', 0x10b981); // نموذج الكوب بلون أخضر تقني
-            initInteractive3D('canvas-package', 'box', 0x059669);      // نموذج العبوة بلون متناسق
+        window.addEventListener('scroll', () => {
+            scrollY = window.scrollY;
         });
 
-        // حلقة الرسم العامة للخلفية
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0005;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0005;
+        });
+
         const clock = new THREE.Clock();
-        function animateGeneral() {
-            requestAnimationFrame(animateGeneral);
+        function animate() {
+            requestAnimationFrame(animate);
             const elapsedTime = clock.getElapsedTime();
-            bgMesh.rotation.x = elapsedTime * 0.15 + scrollY * 0.001;
-            bgMesh.rotation.y = elapsedTime * 0.2 + scrollY * 0.0015;
-            bgMesh.position.y = Math.sin(elapsedTime * 1) * 0.15;
-            bgRenderer.render(bgScene, bgCamera);
+
+            mesh1.rotation.x = elapsedTime * 0.2 + scrollY * 0.001 + mouseY;
+            mesh1.rotation.y = elapsedTime * 0.3 + scrollY * 0.0015 + mouseX;
+
+            mesh2.rotation.x = -elapsedTime * 0.15 - scrollY * 0.0008;
+            mesh2.rotation.y = -elapsedTime * 0.25 - scrollY * 0.0012;
+
+            particles.rotation.y = elapsedTime * 0.05;
+
+            renderer.render(scene, camera);
         }
-        animateGeneral();
+        animate();
 
         window.addEventListener('resize', () => {
-            bgCamera.aspect = window.innerWidth / window.innerHeight;
-            bgCamera.updateProjectionMatrix();
-            bgRenderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
         });
     </script>
 </body>
