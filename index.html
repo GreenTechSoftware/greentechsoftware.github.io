@@ -1,348 +1,306 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenTech Software - Software & IT Systems</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            margin: 0;
-            background-color: #030712;
-            color: #f3f4f6;
-            font-family: system-ui, -apple-system, sans-serif;
-            overflow-x: hidden;
-        }
-        #webgl-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .glass-card {
-            background: rgba(6, 78, 59, 0.25);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            transition: all 0.4s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(16, 185, 129, 0.6);
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
-            transform: translateY(-5px);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GreenTech Software | Custom Software, Databases & Dedicated Dev Teams from Egypt</title>
+<meta name="description" content="GreenTech Software builds custom information systems, databases, web and mobile apps, and supplies dedicated engineering teams to European companies from Giza, Egypt.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- ===== TRACKING: uncomment and add your real IDs =====
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+Meta Pixel: paste code here  |  LinkedIn Insight Tag: paste code here
+-->
+
+<style>
+:root{--ink:#10231c;--leaf:#1f7a4d;--lime:#b9f26b;--paper:#f5f8f4;--line:#d9e3da;--wa:#25d366}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Cairo,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.75;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 20px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.3;font-weight:800}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:12px}
+.sub{color:#4b5f55;max-width:60ch;margin-bottom:36px}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-weight:800;font-size:1.15rem;text-decoration:none}
+.logo i{font-style:normal;color:var(--leaf)}
+nav{display:flex;gap:22px;font-size:.95rem}
+nav a{text-decoration:none;color:#34483e}
+nav a:hover{color:var(--leaf)}
+.tools{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:11px 20px;font:inherit;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn-wa{background:var(--wa);color:#073b1b}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-ghost{border:1.5px solid currentColor;background:transparent}
+@media(max-width:820px){nav{display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:80px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.1rem);margin-bottom:18px}
+.hero p{color:#c6d8cd;max-width:52ch;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-ghost{color:#fff}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;font-size:.88rem;color:#9fb8a9}
+.chips span{border:1px solid #2c4a3d;border-radius:99px;padding:2px 14px}
+.term{direction:ltr;text-align:left;background:#0a1914;border:1px solid #28463a;border-radius:14px;padding:20px;font-family:ui-monospace,Consolas,monospace;font-size:.82rem;line-height:1.9;color:#cfe5d8;overflow-x:auto}
+.term b{color:var(--lime);font-weight:400}.term em{color:#7fb7ff;font-style:normal}.term u{text-decoration:none;color:#6f8a7c}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.term{display:none}}
+
+/* trust */
+.trust{background:var(--paper);padding:28px 0;border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.trust strong{display:block;font-size:1.5rem;color:var(--leaf)}
+.trust small{color:#4b5f55}
+@media(max-width:640px){.trust .wrap{grid-template-columns:1fr 1fr}}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff}
+.card h3{font-size:1.1rem;margin:8px 0}
+.card p{color:#4b5f55;font-size:.95rem}
+.ico{font-size:1.6rem}
+
+/* europe */
+.eu{background:var(--leaf);color:#fff}
+.eu .sub{color:#d8f0e1}
+.eu .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.eu .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)}
+.eu .card p{color:#e1f3e8}
+.eu .btn-dark{background:var(--lime);color:var(--ink)}
+
+/* projects */
+.proj{border-inline-start:4px solid var(--lime);background:var(--paper);padding:22px;border-radius:0 12px 12px 0}
+.proj small{color:#6a7d72}
+.note{font-size:.85rem;color:#6a7d72;margin-top:14px}
+
+/* hardware */
+.hw{background:var(--paper)}
+
+/* contact */
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;font-size:.92rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;width:100%}
+textarea{min-height:100px;resize:vertical}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+.direct{display:grid;gap:12px;align-content:start}
+.direct a{width:fit-content}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#b4c9bc;padding:36px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
+footer a{margin-inline-end:14px}
+
+/* floating whatsapp */
+.fab{position:fixed;bottom:20px;inset-inline-start:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.28);text-decoration:none}
+.fab svg{width:32px;height:32px;fill:#fff}
+@media(prefers-reduced-motion:no-preference){.fab{animation:pop .6s .8s both}@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}}
+</style>
 </head>
-<body class="selection:bg-emerald-500 selection:text-black">
+<body>
 
-    <div id="webgl-container"></div>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Green<i>Tech</i> Software</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#europe">For Europe</a>
+      <a href="#projects">Projects</a>
+      <a href="#hardware">Hardware</a>
+    </nav>
+    <div class="tools">
+      <a class="btn btn-wa" href="#" data-wa="general">WhatsApp</a>
+    </div>
+  </div>
+</header>
 
-    <main class="relative z-10">
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>
         
-        <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-emerald-500/10">
-            <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-                <a href="#" class="text-xl md:text-2xl font-black text-emerald-400 tracking-wider flex items-center gap-2">
-                    <span>GreenTech Software</span>
-                    <span class="text-lg">🇪🇬</span>
-                </a>
-                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-                    <a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a>
-                    <a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا</a>
-                    <a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والتجديد</a>
-                    <a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a>
-                </nav>
-                <a href="#contact" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold px-5 py-2.5 rounded-xl border border-emerald-500/35 transition-all">
-                    احصل على استشارة
-                </a>
-            </div>
-        </header>
+        Custom software and engineering teams, built in Giza for European business
+      </h1>
+      <p>
+        
+        We build information systems, databases and apps for Egyptian companies, and supply dedicated development teams to European firms. Tell us what you need and we reply the same working day.
+      </p>
+      <div class="cta">
+        <a class="btn btn-wa" href="#" data-wa="general">Chat on WhatsApp</a>
+        <a class="btn btn-ghost" href="#contact">Get a free consultation</a>
+      </div>
+      <div class="chips">
+        <span>SQL / NoSQL</span><span>Web &amp; Mobile</span><span>Cloud</span><span>GDPR-ready</span>
+      </div>
+    </div>
+    <div class="term" aria-hidden="true">
+<u>-- your data, in decisions</u><br>
+<b>SELECT</b> branch, <b>SUM</b>(sales) <b>AS</b> revenue<br>
+<b>FROM</b> <em>orders</em><br>
+<b>WHERE</b> month = <em>'current'</em><br>
+<b>GROUP BY</b> branch<br>
+<b>ORDER BY</b> revenue <b>DESC</b>;<br>
+<u>-- 12 rows · 0.04s</u>
+    </div>
+  </div>
+</section>
 
-        <section class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
-            <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 bg-emerald-950/60 px-4 py-1.5 rounded-full border border-emerald-800/50 flex items-center gap-2">
-                <span>حلول برمجية مستدامة وتجديد الأجهزة</span>
-            </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mb-6 leading-tight">
-                نبني أنظمتك الرقمية ونوفر <br>أفضل <span class="text-emerald-400">حلول الأجهزة والتجديد</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-8">
-                نحول أفكارك إلى منصات ذكية ونقدم أنظمة معلومات متكاملة مع تجديد وبيع وشراء أجهزة الكمبيوتر والسيرفرات بكفاءة عالية.
-            </p>
-            <div class="flex gap-4">
-                <a href="#services" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20">
-                    استكشف خدماتنا
-                </a>
-                <a href="#hardware" class="border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 px-8 py-3.5 rounded-xl transition-all flex items-center gap-2">
-                    <span>أنظمة الأجهزة والسيرفرات</span>
-                </a>
-            </div>
-        </section>
+<div class="trust">
+  <div class="wrap">
+    <div><strong>+150</strong><small>projects delivered</small></div>
+    <div><strong>2022</strong><small>operating since</small></div>
+    <div><strong>GMT+2</strong><small>same time zone as Europe</small></div>
+    <div><strong>TAX ID</strong><small>699-224-616</small></div>
+  </div>
+</div>
 
-        <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">من نحن</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شريكك التقني المتكامل لتطوير الأعمال والأجهزة</h2>
-                    <p class="text-gray-400 leading-relaxed mb-6">
-                        نحن شركة رائدة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وإدارة وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات (2022-2026).
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="glass-card p-4 rounded-2xl">
-                            <span class="block text-3xl font-bold text-emerald-400 mb-1">+150</span>
-                            <span class="text-gray-400 text-sm">مشروع تقني منجز</span>
-                        </div>
-                        <div class="glass-card p-4 rounded-2xl">
-                            <span class="block text-3xl font-bold text-emerald-400 mb-1">99%</span>
-                            <span class="text-gray-400 text-sm">نسبة رضاء العملاء</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card p-8 rounded-3xl border-emerald-500/20 relative">
-                    <div class="absolute inset-0 bg-emerald-500/5 rounded-3xl blur-xl"></div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10">رسالتنا التقنية</h3>
-                    <p class="text-gray-300 relative z-10 leading-relaxed">
-                        نجمع بين البرمجيات المتقدمة والبنية التحتية الصلبة للأجهزة لنقدم حلولاً تقنية متكاملة تتسم بالأمان، السرعة، وقابلية التوسع لدعم نمو أعمالك بلا توقف.
-                    </p>
-                </div>
-            </div>
-        </section>
+<section id="services">
+  <div class="wrap">
+    <h2>What we build</h2>
+    <p class="sub">Three core services. Every project starts by understanding how your business works, before any code is written.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🗄️</div><h3>Information systems &amp; databases</h3><p>Management, accounting, inventory and reporting systems on secure SQL and NoSQL databases with regular backups.</p></div>
+      <div class="card"><div class="ico">🌐</div><h3>Web development</h3><p>Fast, responsive websites, dashboards and platforms.</p></div>
+      <div class="card"><div class="ico">📱</div><h3>Mobile apps</h3><p>iOS and Android apps with simple UX and solid performance.</p></div>
+      <div class="card"><div class="ico">☁️</div><h3>Cloud &amp; infrastructure</h3><p>Migrate and run your systems in the cloud for uptime and security.</p></div>
+    </div>
+  </div>
+</section>
 
-        <section id="services" class="py-32 px-6 max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">منظومة <span class="text-emerald-400">خدماتنا البرمجية</span></h2>
-                <p class="text-gray-400 max-w-xl mx-auto">نقدم حلولاً تقنية شاملة تلبي احتياجات شركتك من الألف إلى الياء.</p>
-            </div>
+<section id="europe" class="eu">
+  <div class="wrap">
+    <h2>An engineering team for your European company</h2>
+    <p class="sub">Extend your team with engineers in Giza: overlapping working hours, fluent English, and a lower cost base.</p>
+    <div class="grid">
+      <div class="card"><h3>Start with a small pilot</h3><p>Begin with a short, scoped task before any long commitment.</p></div>
+      <div class="card"><h3>Weekly progress reports</h3><p>You always know what shipped and what's next.</p></div>
+      <div class="card"><h3>GDPR &amp; NDA</h3><p>Clear contracts and data-protection compliance.</p></div>
+    </div>
+    <div class="cta" style="margin-top:32px">
+      <a class="btn btn-dark" href="#contact">Request a dedicated-team proposal</a>
+      <a class="btn btn-ghost" style="color:#fff" href="mailto:contact@greentech.software?subject=Dedicated%20team%20inquiry">contact@greentech.software</a>
+    </div>
+  </div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">🌐</div>
-                    <h3 class="text-2xl font-bold mb-3">تصميم وتطوير الويب</h3>
-                    <p class="text-gray-400 leading-relaxed">مواقع ومنصات إلكترونية احترافية، فائقة السرعة ومتجاوبة مع كافة الشاشات وأجهزة العرض.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">📱</div>
-                    <h3 class="text-2xl font-bold mb-3">تطبيقات الهاتف المحمول</h3>
-                    <p class="text-gray-400 leading-relaxed">تطبيقات ذكية ومخصصة لأنظمة iOS و Android بأداء عالي وتجربة مستخدم سلسة وجذابة.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl mb-6 border border-emerald-500/20">☁️</div>
-                    <h3 class="text-2xl font-bold mb-3">قواعد البيانات والسحابة</h3>
-                    <p class="text-gray-400 leading-relaxed">بناء وإدارة قواعد بيانات آمنة (SQL & NoSQL) مع هندسة سحابية متقدمة لضمان سرعة واستمرارية البيانات.</p>
-                </div>
-            </div>
-        </section>
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <p class="sub">Real results for real clients.</p>
+    <div class="grid">
+      <!-- Replace the placeholders below with real projects (or remove this section until you have client approval) -->
+      <div class="proj"><small>[Client / Industry]</small><h3>[Project title]</h3><p>[Problem] → [Solution] → [Measured result]</p></div>
+      <div class="proj"><small>[Client / Industry]</small><h3>[Project title]</h3><p>[Problem] → [Solution] → [Measured result]</p></div>
+      <div class="proj"><small>[Client / Industry]</small><h3>[Project title]</h3><p>[Problem] → [Solution] → [Measured result]</p></div>
+    </div>
+    <p class="note">Add client logos and testimonials here when available.</p>
+  </div>
+</section>
 
-        <section id="hardware" class="py-32 px-6 max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">أنظمة المعلومات والبنية التحتية</span>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">إدارة، تجديد، وبيع وشراء <span class="text-emerald-400">الأجهزة والسيرفرات</span></h2>
-                <p class="text-gray-400 max-w-xl mx-auto">نوفر أحدث أنظمة المعلومات وحلول إعادة تدوير وتجديد وبيع وشراء أجهزة الكمبيوتر، اللابتوب، الأجهزة اللوحية، والسيرفرات.</p>
-            </div>
+<section id="hardware" class="hw">
+  <div class="wrap">
+    <h2>Hardware &amp; servers</h2>
+    <p class="sub">Buy, sell and refurbish computers, laptops, tablets and servers for businesses, with warranty.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">💻</div><h3>Computers &amp; laptops</h3></div>
+      <div class="card"><div class="ico">📟</div><h3>Tablets &amp; POS</h3></div>
+      <div class="card"><div class="ico">🖧</div><h3>Servers &amp; networking</h3></div>
+      <div class="card"><div class="ico">🔄</div><h3>Trade-in &amp; upgrade</h3></div>
+    </div>
+    <div class="cta" style="margin-top:28px">
+      <a class="btn btn-wa" href="#" data-wa="hardware">Ask about hardware on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">💻</div>
-                    <h3 class="text-xl font-bold mb-2">أجهزة الكمبيوتر واللابتوب</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">شراء، بيع، وتجديد أجهزة الكمبيوتر المكتبية وأجهزة اللابتوب الاحترافية للشركات والأفراد بأعلى مواصفات وضمان.</p>
-                </div>
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Tell us about your project</h2>
+      <p class="sub">Fill in the form and WhatsApp opens with your message ready. We reply within working hours.</p>
+      <form id="leadForm">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Phone or email<input name="contact" required></label>
+        <label>Service needed
+          <select name="service">
+            <option value="sys">Information system / database</option>
+            <option value="web">Web</option>
+            <option value="mobile">Mobile</option>
+            <option value="team">Dedicated team</option>
+            <option value="hw">Hardware</option>
+          </select></label>
+        <label>Short details<textarea name="msg"></textarea></label>
+        <button class="btn btn-wa" type="submit">Send via WhatsApp</button>
+      </form>
+    </div>
+    <div class="direct">
+      <h3>Or reach us directly</h3>
+      <a class="btn btn-wa" href="#" data-wa="general">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" rel="noopener">Facebook</a>
+      <p class="note">📍 Giza, Egypt</p>
+    </div>
+  </div>
+</section>
+</main>
 
-                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">📟</div>
-                    <h3 class="text-xl font-bold mb-2">الأجهزة اللوحية (Tablets)</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">توفر وتجديد الأجهزة اللوحية بمختلف الموديلات لتلبية احتياجات نقاط البيع والأعمال المتنقلة.</p>
-                </div>
+<footer>
+  <div class="wrap">
+    <div>GreenTech Software 🇪🇬 · Since 2022<br>TAX ID: 699-224-616</div>
+    <div><a href="#">Privacy</a><a href="#">Terms</a><br>© 2022-2026 GreenTech Software</div>
+  </div>
+</footer>
 
-                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🖧</div>
-                    <h3 class="text-xl font-bold mb-2">السيرفرات والبنية التحتية</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">بيع وتجديد سيرفرات الشركات القوية ومعدات الشبكات لضمان بيئة عمل رقمية مستقرة وعالية الأداء.</p>
-                </div>
+<a class="fab" href="#" data-wa="general" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-1.9c1.8 1 3.800 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.900c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.100 1.200-4.300-.3-.4a10.300 10.300 0 0 1-1.600-5.500C5.500 9.700 10.200 5.100 16 5.100s10.500 4.600 10.500 10.400S21.800 25.900 16 25.900zm5.700-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.500 8.500 0 0 1-4.200-3.700c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5s-.7-1.700-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400s-1.200 1.200-1.200 2.800 1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.800 5.100 2.100.9 2.900.9 3.900.8.600-.1 1.900-.8 2.200-1.500.3-.8.300-1.400.2-1.500s-.3-.2-.6-.4z"/></svg>
+</a>
 
-                <div class="glass-card p-6 rounded-3xl border-emerald-500/30">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4 border border-emerald-500/20">🔄</div>
-                    <h3 class="text-xl font-bold mb-2">أنظمة المعلومات والاستبدال</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">تقديم استشارات متكاملة لأنظمة المعلومات وبرامج التقييم وإعادة شراء الأجهزة القديمة وتحديثها.</p>
-                </div>
-            </div>
-        </section>
+<script>
+/* ===== WhatsApp number: international format, no + or leading zeros ===== */
+var WA_NUMBER = "201023709170";
 
-        <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
-            <div class="glass-card p-10 md:p-16 rounded-3xl border-emerald-500/20 relative overflow-hidden">
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-                
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">هل ترغب في تطوير نظامك أو شراء/تجديد أجهزتك؟</h2>
-                <p class="text-gray-400 max-w-lg mx-auto mb-8">تواصل معنا اليوم عبر البريد أو منصات التواصل الاجتماعي لنبدأ فوراً.</p>
-                
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="bg-[#1877F2] hover:bg-[#155db2] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        تواصل عبر فيسبوك
-                    </a>
-                    <a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="bg-[#0A66C2] hover:bg-[#095196] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-3">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                        تواصل عبر لينكد إن
-                    </a>
-                </div>
-            </div>
-        </section>
+var MSG = {
+  general: "Hello GreenTech, I'd like to discuss a project.",
+  hardware: "Hello GreenTech, I'd like to ask about hardware and servers."
+};
 
-        <footer class="bg-[#02040a] border-t border-emerald-500/10 pt-16 pb-12 px-6">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="md:col-span-2">
-                    <div class="text-xl font-black text-emerald-400 tracking-wider flex items-center gap-2 mb-4">
-                        <span>GreenTech Software</span>
-                        <span>🇪🇬</span>
-                    </div>
-                    <p class="text-gray-400 text-sm max-w-sm mb-4 leading-relaxed">
-                        شركة متخصصة في هندسة البرمجيات، أنظمة المعلومات، وتجديد وبيع وشراء الأجهزة والسيرفرات لتمكين الأعمال.
-                    </p>
-                    <div class="text-xs text-gray-500 space-y-1 mb-4">
-                        <p>📍 المقر: الجيزة، جمهورية مصر العربية 🇪🇬</p>
-                        <p>📋 السجل الضريبي (TAX ID): <span class="text-emerald-400 font-semibold">699-224-616</span></p>
-                        <p>⏳ سنة التأسيس والنشاط: 2022 - 2026</p>
-                    </div>
-                    
-                    <div class="flex gap-4 pt-2">
-                        <a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all" title="Facebook">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all" title="LinkedIn">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                        </a>
-                    </div>
-                </div>
+function waUrl(text){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
 
-                <div>
-                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">روابط سريعة</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-emerald-400 transition-colors">عن الشركة</a></li>
-                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا البرمجية</a></li>
-                        <li><a href="#hardware" class="hover:text-emerald-400 transition-colors">أنظمة الأجهزة والسيرفرات</a></li>
-                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">تواصل معنا</a></li>
-                    </ul>
-                </div>
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = waUrl(MSG[a.dataset.wa]);
+  a.target = "_blank";
+  a.rel = "noopener";
+});
 
-                <div>
-                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">الدعم والمساعدة</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">استشارة تقنية مجانية</a></li>
-                        <li><a href="mailto:contact@greentech.software" class="hover:text-emerald-400 transition-colors">البريد الإلكتروني</a></li>
-                        <li><a href="https://www.facebook.com/share/14ovveVmvoq/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة الفيسبوك</a></li>
-                        <li><a href="https://www.linkedin.com/company/greentechsoftware/" target="_blank" class="hover:text-emerald-400 transition-colors">صفحة لينكد إن</a></li>
-                    </ul>
-                </div>
-            </div>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = new FormData(this);
+  var svc = this.elements.service.selectedOptions[0].textContent;
+  var text = "GreenTech Software inquiry\n" +
+    "Name: " + f.get("name") + "\n" +
+    "Contact: " + f.get("contact") + "\n" +
+    "Service: " + svc + "\n" +
+    "Details: " + (f.get("msg") || "-");
+  if (typeof gtag === "function") gtag("event", "generate_lead", {method: "whatsapp_form"});
+  window.open(waUrl(text), "_blank", "noopener");
+});
 
-            <div class="max-w-7xl mx-auto pt-8 border-t border-emerald-500/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-                <p>جميع الحقوق محفوظة © 2022-2026 GreenTech Software. صُنع بكل إتقان في مصر</p>
-                <div class="flex gap-6">
-                    <span class="hover:text-emerald-400 cursor-pointer">سياسة الخصوصية</span>
-                    <span class="hover:text-emerald-400 cursor-pointer">الشروط والأحكام</span>
-                </div>
-            </div>
-        </footer>
-    </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const container = document.getElementById('webgl-container');
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 8;
-
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        const group = new THREE.Group();
-        scene.add(group);
-
-        const geom1 = new THREE.IcosahedronGeometry(2.0, 1);
-        const mat1 = new THREE.MeshStandardMaterial({
-            color: 0x10b981,
-            wireframe: true,
-            roughness: 0.2,
-            metalness: 0.9
-        });
-        const mesh1 = new THREE.Mesh(geom1, mat1);
-        group.add(mesh1);
-
-        const geom2 = new THREE.OctahedronGeometry(3.2, 0);
-        const mat2 = new THREE.MeshStandardMaterial({
-            color: 0x059669,
-            wireframe: true,
-            roughness: 0.4,
-            metalness: 0.7,
-            transparent: true,
-            opacity: 0.5
-        });
-        const mesh2 = new THREE.Mesh(geom2, mat2);
-        group.add(mesh2);
-
-        const particlesCount = 200;
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesPositions = new Float32Array(particlesCount * 3);
-
-        for(let i = 0; i < particlesCount * 3; i++) {
-            particlesPositions[i] = (Math.random() - 0.5) * 20;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesPositions, 3));
-        const particlesMaterial = new THREE.PointsMaterial({
-            color: 0x34d399,
-            size: 0.05,
-            transparent: true,
-            opacity: 0.8
-        });
-        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particles);
-
-        scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-        const pointLight1 = new THREE.PointLight(0x34d399, 3);
-        pointLight1.position.set(5, 5, 5);
-        scene.add(pointLight1);
-
-        const pointLight2 = new THREE.PointLight(0x047857, 3);
-        pointLight2.position.set(-5, -5, -5);
-        scene.add(pointLight2);
-
-        let scrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            scrollY = window.scrollY;
-        });
-
-        let mouseX = 0;
-        let mouseY = 0;
-        window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX - window.innerWidth / 2) * 0.0005;
-            mouseY = (e.clientY - window.innerHeight / 2) * 0.0005;
-        });
-
-        const clock = new THREE.Clock();
-        function animate() {
-            requestAnimationFrame(animate);
-            const elapsedTime = clock.getElapsedTime();
-
-            mesh1.rotation.x = elapsedTime * 0.2 + scrollY * 0.001 + mouseY;
-            mesh1.rotation.y = elapsedTime * 0.3 + scrollY * 0.0015 + mouseX;
-
-            mesh2.rotation.x = -elapsedTime * 0.15 - scrollY * 0.0008;
-            mesh2.rotation.y = -elapsedTime * 0.25 - scrollY * 0.0012;
-
-            particles.rotation.y = elapsedTime * 0.05;
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
+/* Track WhatsApp clicks as conversions (works once Google Analytics is enabled) */
+document.addEventListener("click", function(e){
+  var a = e.target.closest("[data-wa]");
+  if (a && typeof gtag === "function") gtag("event", "click_whatsapp", {location: a.dataset.wa});
+});
+</script>
 </body>
 </html>
